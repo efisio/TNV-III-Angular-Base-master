@@ -23,6 +23,13 @@ import { CountryPipe } from './pipes/country.pipe';
 import { LoadingpageComponent } from './components/loadingpage/loadingpage.component';
 import { ApiserviceService } from './services/apiservice.service';
 import { ApiComponent } from './routes/api/api.component';
+import { ChartsModule } from 'ng2-charts';
+import { MyLineChartComponent } from './charts/my-line-chart/my-line-chart.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AboutComponent } from './components/about/about.component';
+import { ApiCovidService } from './services/api-covid.service';
+import { HomeComponent } from './components/home/home.component';
+import { StatisticalCardComponent } from './components/statistical-card/statistical-card.component';
 
 @NgModule({
   declarations: [
@@ -41,16 +48,26 @@ import { ApiComponent } from './routes/api/api.component';
     WelcomepageComponent,
     FilterbycountryComponent,
     CountryPipe,
-    ApiComponent
+    ApiComponent,
+    MyLineChartComponent,
+    WelcomeComponent,
+    AboutComponent,
+    HomeComponent,
+    StatisticalCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
-  providers: [DataService, ApiserviceService],
+  providers: [
+    DataService, 
+    ApiCovidService,
+    ApiserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

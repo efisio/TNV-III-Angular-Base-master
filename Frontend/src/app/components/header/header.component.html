@@ -7,11 +7,11 @@
             class="logo-img">
         </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed"  type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" [class.collapse]="isCollapsed" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home
@@ -19,13 +19,22 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" [routerLink]='["/about"]'>About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Services</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <span class="menu-divider">-</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
                 </li>
             </ul>
         </div>
@@ -37,12 +46,12 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-left">
-                <div class="margin-text-app">
+                <!-- <div class="margin-text-app"> -->
                     <h2 class="font-weight-light text-white covid-text">covid-<span class="h1 _21-text">21</span>
                     </h2>
                     <hr class="logo-divider">
                     <h1 class="text-white h1 tracker-text">&nbsp;Tracker</h1>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

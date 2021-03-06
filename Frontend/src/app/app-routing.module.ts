@@ -7,13 +7,18 @@ import { EditComponent } from './routes/edit/edit.component';
 import { FilterDoubleComponent } from './routes/filter-double/filter-double.component';
 import { SortingbydeathComponent } from './routes/sortingbydeath/sortingbydeath.component';
 import { SortByComponent } from './routes/sort-by/sort-by.component';
-import { WelcomepageComponent } from './routes/welcomepage/welcomepage.component';
 import { FilterbycountryComponent } from './routes/filterbycountry/filterbycountry.component';
 import { ApiComponent } from './routes/api/api.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo : '/welcome', pathMatch: 'full' },
+  { path: "", redirectTo : '/home', pathMatch: 'full' },
+  // { path: "welcome", component : WelcomeComponent },
+  { path: "home", component : HomeComponent },
+  { path: "about", component : AboutComponent },
   { path: "dashboard", component : DashboardComponent },
   { path: "add", component : AddComponent },
   { path: "details/:id", component : DetailsComponent },
@@ -21,7 +26,6 @@ const routes: Routes = [
   { path: "filterdouble", component: FilterDoubleComponent},
   { path: "sortingbydeath", component: SortingbydeathComponent},
   { path: "sortBy", component: SortByComponent},
-  { path: "welcome", component: WelcomepageComponent},
   { path: "filterByCountry", component: FilterbycountryComponent},
   { path: "apicorona", component:ApiComponent}
 ];

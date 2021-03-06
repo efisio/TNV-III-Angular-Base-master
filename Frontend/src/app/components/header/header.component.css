@@ -1,5 +1,5 @@
 .masthead {
-    height: 50vh;
+    height: 35vh;
     min-height: 50%;
     background-image: url('/assets/img/coronavirus-img.jpg');
     background-size: cover;
@@ -15,7 +15,7 @@
   
   .covid-text{
     font-size: 4.4rem;
-    margin-top: 96px;
+    margin-top: 70px;
     margin-bottom: 0;
   }
   
@@ -30,9 +30,9 @@
     margin: 0;
   }
   
-  .margin-text-app{
+  /* .margin-text-app{
     margin-top: 80px;
-  }
+  } */
   
   .text-claim{
     color: #343a40;
@@ -48,4 +48,9 @@
   #claim-div{
     border-top: 1px solid red;
     border-bottom: 1px solid red;
+  }
+
+  .menu-divider{
+    line-height: 40px;
+    color: rgba(0,0,0,.5);
   }
