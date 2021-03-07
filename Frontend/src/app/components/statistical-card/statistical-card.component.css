@@ -1,10 +1,10 @@
 .confirmed-card{
     background-color: #008494;
-    color: #01acc1; 
+    color: #0abbd1; 
 }
 
 .confirmed-icon{
-    color: #01acc1;
+    color: #0abbd1;
 }
 
 .recovered-card{
@@ -17,22 +17,22 @@
 }
 
 .active-card{
-    color: #356aa5; 
+    color: #3c7dc5; 
     background-color: #224C7B;
 }
 
 .active-icon{
-    color: #356aa5;
+    color: #3c7dc5;
 }
 
 .deaths-card{
-    color: #ca4242; 
+    color: #e75656; 
     /* background-color: #ca4545; */
     background-color: #ae1010;
 }
 
 .deaths-icon{
-    color: #ca4242;
+    color: #e75656;
 }
 
 .data-style{
