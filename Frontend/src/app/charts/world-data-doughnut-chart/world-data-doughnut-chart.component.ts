@@ -22,4 +22,6 @@ export class WorldDataDoughnutChartComponent implements OnInit {
   ngOnInit() {
   }
 
+  //TODO integrazione dati
+
 }
