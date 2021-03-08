@@ -40,6 +40,9 @@ export class WorldDataDoughnutChartComponent implements OnInit {
     plugins: {
       datalabels: {
         color: '#323d48',
+        font: {
+          weight: 'bold'
+        },
         formatter: (value, ctx) => {
           var perc = ((value * 100) / this.totalCount).toFixed(0) + "%";
           return perc;
