@@ -12,6 +12,7 @@ export class StatisticalCardComponent implements OnInit {
 
   title: string;
   data: number;
+  incremental: number;
   class : string;
   icon : string;
 

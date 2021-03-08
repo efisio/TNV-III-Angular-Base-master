@@ -32,31 +32,34 @@ export class HomeComponent implements OnInit {
 
       /* set dei dati per le cards */
       this.confirmedData = {
-        title: 'Confirmed',
+        title: 'Casi Confermati',
         data: this.dailyData.confirmed,
+        incremental: this.dailyData.new_confirmed,
         class: "confirmed",
         icon: 'fas fa-head-side-mask'
       }
 
       this.recoveredData = {
-        title: 'Recovered',
+        title: 'Casi Guariti',
         data: this.dailyData.recovered,
+        incremental: this.dailyData.new_recovered,
         class: "recovered",
-        icon: 'fas fa-procedures'
+        icon: 'fas fa-shield-virus'
       }
 
       this.activeData = {
-        title: 'Active',
+        title: 'Casi Attivi',
         data: this.dailyData.active,
         class: "active",
-        icon: 'fas fa-virus'
+        icon: 'fas fa-lungs-virus'
       }
 
       this.deathData = { 
-        title: 'Deaths',
+        title: 'Decessi',
         data: this.dailyData.confirmed,
+        incremental: this.dailyData.new_deaths,
         class: "deaths",
-        icon: 'fa fa-skull-crossbones'
+        icon: 'fa fa-virus'
       }
     },
       err => console.error(err),

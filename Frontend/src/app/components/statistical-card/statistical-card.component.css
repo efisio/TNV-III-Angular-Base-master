@@ -1,38 +1,46 @@
-.confirmed-card{
+.recovered-card{
+    background-color: #108f1f;
+    color: #64d071; 
+}
+
+.recovered-icon{
+    color: #64d071;
+}
+
+/* .recovered-card{
     background-color: #008494;
     color: #0abbd1; 
 }
 
-.confirmed-icon{
+.recovered-icon{
     color: #0abbd1;
-}
+} */
 
-.recovered-card{
+.active-card{
     color: #ffc078; 
     background-color: #fd7e14;
 }
 
-.recovered-icon{
+.active-icon{
     color: #ffc078;
 }
 
-.active-card{
+.confirmed-card{
     color: #3c7dc5; 
     background-color: #224C7B;
 }
 
-.active-icon{
+.confirmed-icon{
     color: #3c7dc5;
 }
 
 .deaths-card{
-    color: #e75656; 
-    /* background-color: #ca4545; */
-    background-color: #ae1010;
+    color: #ff9191; 
+    background-color: #cb372c;
 }
 
 .deaths-icon{
-    color: #e75656;
+    color: #ff9191;
 }
 
 .data-style{
@@ -44,4 +52,9 @@
 .card-title{
     font-weight: 600;
     font-size: 1.4em;
+}
+
+.incremental-text{
+    font-size: 1.5rem;
+    font-weight: 100;
 }

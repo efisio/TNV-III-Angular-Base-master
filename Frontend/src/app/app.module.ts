@@ -30,6 +30,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ApiCovidService } from './services/api-covid.service';
 import { HomeComponent } from './components/home/home.component';
 import { StatisticalCardComponent } from './components/statistical-card/statistical-card.component';
+import { WorldDataBarChartComponent } from './charts/world-data-bar-chart/world-data-bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { StatisticalCardComponent } from './components/statistical-card/statisti
     WelcomeComponent,
     AboutComponent,
     HomeComponent,
-    StatisticalCardComponent
+    StatisticalCardComponent,
+    WorldDataBarChartComponent
   ],
   imports: [
     BrowserModule,

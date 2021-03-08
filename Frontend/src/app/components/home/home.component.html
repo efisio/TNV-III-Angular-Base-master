@@ -1,18 +1,10 @@
 <div class="container" *ngIf="dailyData">
-    <!-- <div class="row">
-        <div >
-            {{dailyData.updatedAt}}
-            {{dailyData.deaths }}
-            {{dailyData.confirmed}}
-            {{dailyData.recovered}}
-            {{dailyData.new_confirmed}}
-            {{dailyData.new_recovered}}
-            {{dailyData.active}}
-        </div>
-
-    </div> -->
+    <div>
+        <h2>Statistiche del coronavirus nel mondo</h2>
+    </div>
     <div class="p-1 mb-5">
-        <div class="row">
+        <!-- card section -->
+        <div class="row mb-3">
             <div class="col-12 col-md-6 col-sm-6 col-lg-3 p-2">
                 <app-statistical-card [statisticalCardDatata]="confirmedData"></app-statistical-card>
             </div>
@@ -26,8 +18,26 @@
                 <app-statistical-card [statisticalCardDatata]="deathData"></app-statistical-card>
             </div>
         </div>
+        <!-- graph section -->
+        <div class="row mb-3">
+            <div class="col-12 col-md-4 col-sm-4 col-lg-4">
+                <div>
+                    <h4>Andamenti</h4>
+                </div>
+                <div>
+                    grafici vari calcoli percentuali
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-sm-8 col-lg-8">
+                <div>
+                    <h4>Andamenti</h4>
+                </div>
+                <app-world-data-bar-chart [worldDailyData]="dailyData"></app-world-data-bar-chart>
+            </div>
+        </div>
         <div class="row">
-            <div class="col text-center mt-2 col-12"><span class="">updated on {{dailyData.date | date:'dd/MM/yyyy'}}</span></div>
+            <div class="col text-center mt-2 col-12"><span class="">updated on {{dailyData.date |
+                    date:'dd/MM/yyyy'}}</span></div>
         </div>
         <div>register for more statistical data-mettere bottone o link per la registrazione</div>
     </div>
