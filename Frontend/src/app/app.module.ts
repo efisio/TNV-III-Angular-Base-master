@@ -31,6 +31,7 @@ import { ApiCovidService } from './services/api-covid.service';
 import { HomeComponent } from './components/home/home.component';
 import { StatisticalCardComponent } from './components/statistical-card/statistical-card.component';
 import { WorldDataBarChartComponent } from './charts/world-data-bar-chart/world-data-bar-chart.component';
+import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-chart/world-data-doughnut-chart.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { WorldDataBarChartComponent } from './charts/world-data-bar-chart/world-
     AboutComponent,
     HomeComponent,
     StatisticalCardComponent,
-    WorldDataBarChartComponent
+    WorldDataBarChartComponent,
+    WorldDataDoughnutChartComponent
   ],
   imports: [
     BrowserModule,
