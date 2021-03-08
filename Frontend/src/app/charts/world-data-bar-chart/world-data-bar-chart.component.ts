@@ -58,7 +58,8 @@ export class WorldDataBarChartComponent implements OnInit {
       backgroundColor: [
         'rgba(60, 125, 197, 1)',
         'rgba(100, 208, 113, 1)',
-        'rgba(255, 145, 145, 1)',
+        // 'rgba(255, 145, 145, 1)',
+        'rgba(203, 55, 44, 1)'
       ], 
       //colore barre su hover
       hoverBackgroundColor: [
