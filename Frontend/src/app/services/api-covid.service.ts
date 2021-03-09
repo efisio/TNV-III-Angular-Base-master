@@ -22,8 +22,9 @@ export class ApiCovidService {
     return this.http.get<ApiDaily>(this.baseUrl + '/timeline');
   }
 
-  getAfghanistanData() {
-    return this.http.get<ApiCountry>(this.baseUrl + '/countries' + '/AF');
+  getCountryData(countryCode: string) {
+    return this.http.get<any>(this.baseUrl + '/countries' + '/' + countryCode);
   }
+  
 
 }

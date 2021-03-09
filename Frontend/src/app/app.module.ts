@@ -35,6 +35,7 @@ import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-ch
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerService } from './services/spinner.service';
 import { SpinnerInterceptor } from './interceptors/spinner-interceptor';
+import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SpinnerInterceptor } from './interceptors/spinner-interceptor';
     StatisticalCardComponent,
     WorldDataBarChartComponent,
     WorldDataDoughnutChartComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<div class="container">
+
+    <form class="pt-5" #form="ngForm">
+        <div class="form-group row">
+            <label for="sort" class="col-sm-2 col-form-label">Seleziona un paese abilitato</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="country" ngModel required name="country">
+                    <option *ngFor="let country of countries"> {{country}} </option>
+                </select>
+            </div>
+        </div>
+    
+    </form>
+    
+    <button class="btn btn-primary mb-3" (click)="filterByCountry(form)">Salva sul Database</button>
+
+</div>

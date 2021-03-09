@@ -20,4 +20,8 @@ export class ApiserviceService {
     return this.http.get<ApiCountry>(this.baseUrl+'/countries'+'/AF');
   }
 
+  getCountryData(countryCode: string) {
+    return this.http.get<ApiCountry>(this.baseUrl + '/countries' + '/' + countryCode);
+  }
+
 }

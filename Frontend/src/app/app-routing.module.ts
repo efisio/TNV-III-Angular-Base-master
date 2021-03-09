@@ -12,6 +12,7 @@ import { ApiComponent } from './routes/api/api.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
 
 
 const routes: Routes = [
@@ -20,14 +21,15 @@ const routes: Routes = [
   { path: "home", component : HomeComponent },
   { path: "about", component : AboutComponent }, //welcome
   { path: "dashboard", component : DashboardComponent },
-  // { path: "add", component : AddComponent },
-  // { path: "details/:id", component : DetailsComponent },
-  // { path: "edit/:id", component: EditComponent },
-  // { path: "filterdouble", component: FilterDoubleComponent},
-  // { path: "sortingbydeath", component: SortingbydeathComponent},
-  // { path: "sortBy", component: SortByComponent},
-  // { path: "filterByCountry", component: FilterbycountryComponent},
-  // { path: "apicorona", component:ApiComponent}
+  { path: "adminDashboard", component : AdminDashboardComponent },
+  { path: "add", component : AddComponent },
+  { path: "details/:id", component : DetailsComponent },
+  { path: "edit/:id", component: EditComponent },
+  { path: "filterdouble", component: FilterDoubleComponent},
+  { path: "sortingbydeath", component: SortingbydeathComponent},
+  { path: "sortBy", component: SortByComponent},
+  { path: "filterByCountry", component: FilterbycountryComponent},
+  { path: "apicorona", component:ApiComponent}
 ];
 
 @NgModule({
