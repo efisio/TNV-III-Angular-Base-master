@@ -12,6 +12,8 @@ import { ApiComponent } from './routes/api/api.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './routes/login/login.component';
+import { RegisterComponent } from './routes/register/register.component';
 
 
 const routes: Routes = [
@@ -27,7 +29,9 @@ const routes: Routes = [
   { path: "sortingbydeath", component: SortingbydeathComponent},
   { path: "sortBy", component: SortByComponent},
   { path: "filterByCountry", component: FilterbycountryComponent},
-  { path: "apicorona", component:ApiComponent}
+  { path: "apicorona", component:ApiComponent},
+  { path: "login", component:LoginComponent},
+  { path: "register", component:RegisterComponent}
 ];
 
 @NgModule({
