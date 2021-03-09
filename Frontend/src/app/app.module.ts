@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
 import { DataService } from './services/data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddComponent } from './routes/add/add.component';
 import { DetailsComponent } from './routes/details/details.component';
 import { FormsModule } from '@angular/forms';
@@ -32,6 +32,9 @@ import { HomeComponent } from './components/home/home.component';
 import { StatisticalCardComponent } from './components/statistical-card/statistical-card.component';
 import { WorldDataBarChartComponent } from './charts/world-data-bar-chart/world-data-bar-chart.component';
 import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-chart/world-data-doughnut-chart.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerService } from './services/spinner.service';
+import { SpinnerInterceptor } from './interceptors/spinner-interceptor';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,8 @@ import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-ch
     HomeComponent,
     StatisticalCardComponent,
     WorldDataBarChartComponent,
-    WorldDataDoughnutChartComponent
+    WorldDataDoughnutChartComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +74,13 @@ import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-ch
   providers: [
     DataService, 
     ApiCovidService,
-    ApiserviceService
+    ApiserviceService,
+    SpinnerService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SpinnerInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
