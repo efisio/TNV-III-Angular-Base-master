@@ -22,7 +22,7 @@ export class SpinnerInterceptor implements HttpInterceptor {
 
         this.requests.push(req);
 
-        console.log("No of requests--->" + this.requests.length);
+        // console.log("No of requests--->" + this.requests.length);
 
         this.spinnerService.isLoading.next(true);
         return Observable.create(observer => {

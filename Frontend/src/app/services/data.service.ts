@@ -63,7 +63,8 @@ export class DataService {
     console.log('-->', countryCode);
     console.log('----->', countryData);
 
-    const body = JSON.stringify(countryData);
+    
+    const body = Object.assign([], countryData);
 
     return this.http.post<any>(this.baseURL + "/timelineCountry/" + countryCode, body);
   };
