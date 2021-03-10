@@ -4,7 +4,7 @@ module.exports = (sequelize, DataType) => {
     let TimelineEntry = sequelize.define('TimelineEntry', {
     // id missing because Sequelize adds it by default
     countryCode: DataType.STRING(2),
-    date: DataType.INTEGER(12),
+    date: DataType.DATE,
     updatedAt: DataType.STRING(26),
     death: DataType.INTEGER(12),
     confirmed: DataType.INTEGER(12),
