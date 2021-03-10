@@ -1,11 +1,15 @@
 <div class="container">
 
+    <h3>Dashboard Admin</h3>
+    <div>
+        <h4>Importazioni dati Covid</h4>
+    </div>
     <form class="pt-5" #form="ngForm">
         <div class="form-group row">
-            <label for="sort" class="col-sm-2 col-form-label">Seleziona un paese abilitato</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="country" ngModel required name="country">
-                    <option *ngFor="let country of countries"> {{country}} </option>
+            <label for="sort" class="col-sm-12 col-form-label">Seleziona un paese da importare</label>
+            <div class="col-sm-6">
+                <select class="form-control" id="countryDb" ngModel required name="countryDb" [(ngModel)]="selectedValue">
+                    <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
                 </select>
             </div>
         </div>

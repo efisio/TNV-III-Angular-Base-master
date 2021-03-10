@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ApiDailyData } from 'src/app/models/apiDaily.model';
 import { DataService } from 'src/app/services/data.service';
 import { ApiCovidService } from '../../services/api-covid.service';
+import { EnabledCountry } from '../../models/enabledCountry.model';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,17 +13,21 @@ import { ApiCovidService } from '../../services/api-covid.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  countries = ["IT", "GB"];
-
   country: string;
+  selectedValue: string;
+  countriesDb: EnabledCountry[];
 
   constructor(private dataService: DataService, private apiCovidService: ApiCovidService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getEnabledCountries();
+
+    
   }
 
   filterByCountry(form: NgForm) {
-    this.country = form.form.value.country;
+    // this.country = form.form.value.country;
+    this.country = this.selectedValue;
 
     if (this.country) {
       console.log(this.country);
@@ -53,5 +58,12 @@ export class AdminDashboardComponent implements OnInit {
       }
     )
   } 
+
+  getEnabledCountries(){
+    this.dataService.getEnabledCountries()
+      .subscribe((response: EnabledCountry[]) => {
+        this.countriesDb = response;
+      })
+  }
 
 }

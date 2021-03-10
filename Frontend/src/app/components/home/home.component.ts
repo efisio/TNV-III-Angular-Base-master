@@ -31,10 +31,10 @@ export class HomeComponent implements OnInit {
     console.log(this.loginService.checkIsLogged())
 
     //check login
-    if (!this.loginService.checkIsLogged()) {
-      //redirect a pagina di login
-      this.router.navigate(['/login']);
-    } else {
+    // if (!this.loginService.checkIsLogged()) {
+    //   //redirect a pagina di login
+    //   this.router.navigate(['/login']);
+    // } else {
 
       this.apiService.getDailyData().subscribe((data: ApiDaily) => {
         this.timelineData = data;
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
         () => console.log("done loading daily data", this.dailyData)
       )
 
-    }
+    // }
   }
 
 }

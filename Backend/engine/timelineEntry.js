@@ -6,19 +6,13 @@ const TimelineEntry = require('../models/index').TimelineEntry;
 const postTimelineData = (req, res) => {
 
     const body = req.body;
-    console.log('body: ', body)
     const countryCode = req.params.countryCode;
-    console.log('country code:', countryCode)
 
     if (!body || !countryCode) {
         return res.status(500).send('Empty request');
     }
 
-    // return res.status(201).send('ciao andrea');
-
     body.forEach(timelineEntry => {
-
-        console.log();
 
         const { active, confirmed, date, deaths, new_confirmed, new_deaths, new_recovered, recovered, updated_at } = timelineEntry;
 
@@ -38,10 +32,10 @@ const postTimelineData = (req, res) => {
 
     })
     .then(entry => {
-        return res.status(201).send('Updated');
+        return res.status(201).send(entry);
     })
     .catch(error => {
-        // return res.status(500).send(error);
+        return res.status(500).send(error);
     });
 };
 
