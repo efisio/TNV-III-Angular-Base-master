@@ -1,13 +1,13 @@
-<form (ngSubmit)="login()" #loginForm="ngForm">
+<form (ngSubmit)="login(loginForm)" #loginForm="ngForm">
     <div class="imgcontainer">
     </div>
   
     <div class="container">
       <label for="user"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" id="name" required [(ngModel)]="userName" name ="userName"> 
+      <input type="text" placeholder="Enter Username" id="name" required ngModel name ="userName"> 
   
       <label for="pwd"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" id="pwd" required [(ngModel)]="pwd" name="pwd">
+      <input type="password" placeholder="Enter Password" id="pwd" required ngModel name="pwd">
   
       <button type="submit" [disabled]="!loginForm.valid">Login</button>
      

@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addUsers() {
+  addUsers(registerForm) {
     //this.currentuser.userName = this.userName;
     //this.currentuser.pwd = this.pwd
     this.currentUser = { userName: this.userName, pwd: this.pwd }

@@ -32,6 +32,8 @@ import { HomeComponent } from './components/home/home.component';
 import { StatisticalCardComponent } from './components/statistical-card/statistical-card.component';
 import { WorldDataBarChartComponent } from './charts/world-data-bar-chart/world-data-bar-chart.component';
 import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-chart/world-data-doughnut-chart.component';
+import { LoginComponent } from './routes/login/login.component';
+import { RegisterComponent } from './routes/register/register.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-ch
     HomeComponent,
     StatisticalCardComponent,
     WorldDataBarChartComponent,
-    WorldDataDoughnutChartComponent
+    WorldDataDoughnutChartComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

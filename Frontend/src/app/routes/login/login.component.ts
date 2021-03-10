@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-   login() {
+  login(loginForm: NgForm) {
     let checkLogin = this.loginService.checkUser(this.userName, this.pwd);
     if (checkLogin) {
       this.router.navigate(['/dashboard']);
