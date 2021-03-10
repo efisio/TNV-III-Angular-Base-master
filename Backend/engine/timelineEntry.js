@@ -25,6 +25,7 @@ const postTimelineData = (req, res) => {
         TimelineEntry.create({
 
             countryCode: countryCode,
+            date: date,
             updatedAt: updated_at,
             death: deaths,
             confirmed: confirmed,
@@ -40,7 +41,7 @@ const postTimelineData = (req, res) => {
         return res.status(201).send('Updated');
     })
     .catch(error => {
-        return res.status(500).send(error);
+        // return res.status(500).send(error);
     });
 };
 
