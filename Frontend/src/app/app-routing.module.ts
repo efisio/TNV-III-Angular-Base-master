@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
+import { UserDashboardComponent } from './routes/user-dashboard/user-dashboard.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
   // { path: "filterByCountry", component: FilterbycountryComponent},
   // { path: "apicorona", component:ApiComponent},
   { path: "login", component:LoginComponent},
-  { path: "register", component:RegisterComponent}
+  { path: "register", component:RegisterComponent},
+  { path: "userDashboard", component:UserDashboardComponent},
 ];
 
 @NgModule({

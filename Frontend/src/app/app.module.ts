@@ -38,6 +38,7 @@ import { SpinnerInterceptor } from './interceptors/spinner-interceptor';
 import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
+import { UserDashboardComponent } from './routes/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { RegisterComponent } from './routes/register/register.component';
     SpinnerComponent,
     AdminDashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
