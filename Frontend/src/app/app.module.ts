@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
 import { DataService } from './services/data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddComponent } from './routes/add/add.component';
 import { DetailsComponent } from './routes/details/details.component';
 import { FormsModule } from '@angular/forms';
@@ -23,6 +23,19 @@ import { CountryPipe } from './pipes/country.pipe';
 import { LoadingpageComponent } from './components/loadingpage/loadingpage.component';
 import { ApiserviceService } from './services/apiservice.service';
 import { ApiComponent } from './routes/api/api.component';
+import { ChartsModule } from 'ng2-charts';
+import { MyLineChartComponent } from './charts/my-line-chart/my-line-chart.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AboutComponent } from './components/about/about.component';
+import { ApiCovidService } from './services/api-covid.service';
+import { HomeComponent } from './components/home/home.component';
+import { StatisticalCardComponent } from './components/statistical-card/statistical-card.component';
+import { WorldDataBarChartComponent } from './charts/world-data-bar-chart/world-data-bar-chart.component';
+import { WorldDataDoughnutChartComponent } from './charts/world-data-doughnut-chart/world-data-doughnut-chart.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerService } from './services/spinner.service';
+import { SpinnerInterceptor } from './interceptors/spinner-interceptor';
+import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -41,16 +54,36 @@ import { ApiComponent } from './routes/api/api.component';
     WelcomepageComponent,
     FilterbycountryComponent,
     CountryPipe,
-    ApiComponent
+    ApiComponent,
+    MyLineChartComponent,
+    WelcomeComponent,
+    AboutComponent,
+    HomeComponent,
+    StatisticalCardComponent,
+    WorldDataBarChartComponent,
+    WorldDataDoughnutChartComponent,
+    SpinnerComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
-  providers: [DataService, ApiserviceService],
+  providers: [
+    DataService, 
+    ApiCovidService,
+    ApiserviceService,
+    SpinnerService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SpinnerInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

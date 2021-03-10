@@ -1,0 +1,67 @@
+.welcome-section{
+    margin-top: 35px;
+}
+
+.welcome-widget{
+    padding: 10px;
+    margin: 20px 20px 20px 20px
+}
+
+.welcome-widget h5{
+    font-weight: 800;
+    color: #28527E;
+    padding-top: 10px;
+}
+
+.icon-background {
+    color:  #c0d3e0;
+}
+
+.icon-color {
+    color:  #28527E;
+}
+
+.circle-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    padding: 30px;
+}
+
+.welcome-widget-container{
+    margin-top: 10px;
+}
+
+.margin-top-30{
+    margin-top: 30px;
+}
+
+.tracker-text{
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 800;
+  padding-left: 10px;
+  line-height: 34px;
+}
+
+.covid-text{
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+._21-text{
+  font-weight: 600;
+  font-size: 3.5rem;
+}
+
+.registration-btn{
+    margin: 10px 0 10px 0;
+}
+
+.wrap-primary-text{
+    line-height: 100px;
+    padding: 0 5px 0 5px;
+}

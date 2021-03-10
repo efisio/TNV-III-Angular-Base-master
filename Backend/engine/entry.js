@@ -1,4 +1,5 @@
 const DataEntry = require('../models/index').DataEntry;
+const TimelineEntry = require('../models/index').TimelineEntry;
 
 const getEntry = (req, res) => {
   DataEntry.findAll({})
@@ -130,10 +131,58 @@ const deleteEntry = (req, res) => {
     })
 };
 
+// /**
+//  * Salvataggio dello storico di una country by countryCode
+//  */
+// const postTimelineData = (req, res) => {
+
+//   const body = req.body;
+//   console.log('body: ', body)
+//   const countryCode = req.params.countryCode;
+//   console.log('country code:', countryCode)
+
+//   if (!body || !countryCode){
+//     return res.status(500).send('Empty request');
+//   }
+
+//   // return res.status(201).send('ciao andrea');
+
+//   body.forEach(timelineEntry => {
+
+//     console.log();
+
+//     const { active, confirmed, date, deaths, new_confirmed, new_deaths, new_recovered, recovered, updated_at } = timelineEntry;
+
+//     TimelineEntry.create({
+
+//         countryCode: countryCode,
+//         updatedAt: updated_at,
+//         death: deaths,
+//         confirmed: confirmed,
+//         recovered: recovered,
+//         new_confirmed: new_confirmed,
+//         new_recovered: new_recovered,
+//         new_deaths: new_deaths,
+//         active: active
+//       })
+    
+//     })
+//     .then(entry => {
+//       return res.status(201).send('Updated');
+//     })
+//     .catch(error => {
+//       return res.status(500).send(error);
+//     });
+// };
+
+
+
+
 module.exports = {
   getEntry,
   getEntryById,
   editEntry,
   deleteEntry,
-  createEntry
+  createEntry,
+  // postTimelineData
 };

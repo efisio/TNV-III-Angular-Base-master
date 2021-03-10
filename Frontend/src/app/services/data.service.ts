@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CovidData } from '../models/data.model';
+import { ApiDaily } from '../models/apiDaily.model';
 
 
 @Injectable({
@@ -8,20 +9,20 @@ import { CovidData } from '../models/data.model';
 })
 export class DataService {
 
-  baseURL = 'http://localhost:3000/data';
+  baseURL = 'http://localhost:3000';
 
   constructor( private http : HttpClient) { }
 
   getData () {
-    return this.http.get<Array<CovidData>>(this.baseURL)
+    return this.http.get<Array<CovidData>>(this.baseURL + "/data/")
   }
 
   getEntry( id ) {
-    return this.http.get<CovidData>(this.baseURL + "/" + id)
+    return this.http.get<CovidData>(this.baseURL + "/data/" + id)
   }
 
   addEntry = (data: CovidData) => {
-    return this.http.post<CovidData>(this.baseURL, {
+    return this.http.post<CovidData>(this.baseURL + "/data/", {
       "country": data.country,
       "population": data.population,
       "cases": data.cases,
@@ -36,11 +37,11 @@ export class DataService {
   };
 
   deleteEntry( id ){
-    return this.http.delete(this.baseURL + "/" + id)
+    return this.http.delete(this.baseURL + "/data/" + id)
   }
 
   editEntry = (data: CovidData) => {
-    return this.http.put(this.baseURL + '/' + data.id, {
+    return this.http.put(this.baseURL + "/data/" + data.id, {
       "id": data.id,
       "country": data.country,
       "population": data.population,
@@ -55,4 +56,16 @@ export class DataService {
     });
   };
 
+
+  //salvataggio dati sul DB
+  saveCountryData = (countryCode: string, countryData: any) => {
+
+    console.log('-->', countryCode);
+    console.log('----->', countryData);
+
+    
+    const body = Object.assign([], countryData);
+
+    return this.http.post<any>(this.baseURL + "/timelineCountry/" + countryCode, body);
+  };
 }

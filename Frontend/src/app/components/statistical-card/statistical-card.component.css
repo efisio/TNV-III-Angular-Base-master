@@ -1,0 +1,60 @@
+.recovered-card{
+    background-color: #108f1f;
+    color: #64d071; 
+}
+
+.recovered-icon{
+    color: #64d071;
+}
+
+/* .recovered-card{
+    background-color: #008494;
+    color: #0abbd1; 
+}
+
+.recovered-icon{
+    color: #0abbd1;
+} */
+
+.active-card{
+    color: #ffc078; 
+    background-color: #fd7e14;
+}
+
+.active-icon{
+    color: #ffc078;
+}
+
+.confirmed-card{
+    color: #3c7dc5; 
+    background-color: #224C7B;
+}
+
+.confirmed-icon{
+    color: #3c7dc5;
+}
+
+.deaths-card{
+    color: #ff9191; 
+    background-color: #cb372c;
+}
+
+.deaths-icon{
+    color: #ff9191;
+}
+
+.data-style{
+    font-size: 2.1em;
+    font-weight: 900;
+    color: white;
+}
+
+.card-title{
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.incremental-text{
+    font-size: 1.5rem;
+    font-weight: 100;
+}
