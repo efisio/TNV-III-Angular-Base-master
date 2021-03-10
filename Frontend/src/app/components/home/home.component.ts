@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ApiDaily, ApiDailyData } from 'src/app/models/apiDaily.model';
 import { StatisticalCard } from 'src/app/models/statisticalCard.model';
 import { ApiCovidService } from 'src/app/services/api-covid.service';
+import { LoginComponent } from '../../routes/login/login.component';
+import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +13,7 @@ import { ApiCovidService } from 'src/app/services/api-covid.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private apiService: ApiCovidService) { }
+  constructor(private apiService: ApiCovidService, private loginService: LoginService, private router: Router) { }
 
   timelineData: ApiDaily;
   dailyData: ApiDailyData;
@@ -25,46 +28,56 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.apiService.getDailyData().subscribe((data: ApiDaily) => {
-      this.timelineData = data;
+    console.log(this.loginService.checkIsLogged())
 
-      this.dailyData = this.timelineData.data[0];
+    //check login
+    if (!this.loginService.checkIsLogged()) {
+      //redirect a pagina di login
+      this.router.navigate(['/login']);
+    } else {
 
-      /* set dei dati per le cards */
-      this.confirmedData = {
-        title: 'Casi Confermati',
-        data: this.dailyData.confirmed,
-        incremental: this.dailyData.new_confirmed,
-        class: "confirmed",
-        icon: 'fas fa-head-side-mask'
-      }
+      this.apiService.getDailyData().subscribe((data: ApiDaily) => {
+        this.timelineData = data;
 
-      this.recoveredData = {
-        title: 'Casi Guariti',
-        data: this.dailyData.recovered,
-        incremental: this.dailyData.new_recovered,
-        class: "recovered",
-        icon: 'fas fa-shield-virus'
-      }
+        this.dailyData = this.timelineData.data[0];
 
-      this.activeData = {
-        title: 'Casi Attivi',
-        data: this.dailyData.active,
-        class: "active",
-        icon: 'fas fa-lungs-virus'
-      }
+        /* set dei dati per le cards */
+        this.confirmedData = {
+          title: 'Casi Confermati',
+          data: this.dailyData.confirmed,
+          incremental: this.dailyData.new_confirmed,
+          class: "confirmed",
+          icon: 'fas fa-head-side-mask'
+        }
 
-      this.deathData = { 
-        title: 'Decessi',
-        data: this.dailyData.confirmed,
-        incremental: this.dailyData.new_deaths,
-        class: "deaths",
-        icon: 'fa fa-virus'
-      }
-    },
-      err => console.error(err),
-      () => console.log("done loading daily data", this.dailyData)
-    )
+        this.recoveredData = {
+          title: 'Casi Guariti',
+          data: this.dailyData.recovered,
+          incremental: this.dailyData.new_recovered,
+          class: "recovered",
+          icon: 'fas fa-shield-virus'
+        }
+
+        this.activeData = {
+          title: 'Casi Attivi',
+          data: this.dailyData.active,
+          class: "active",
+          icon: 'fas fa-lungs-virus'
+        }
+
+        this.deathData = { 
+          title: 'Decessi',
+          data: this.dailyData.confirmed,
+          incremental: this.dailyData.new_deaths,
+          class: "deaths",
+          icon: 'fa fa-virus'
+        }
+      },
+        err => console.error(err),
+        () => console.log("done loading daily data", this.dailyData)
+      )
+
+    }
   }
 
 }

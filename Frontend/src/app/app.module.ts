@@ -36,6 +36,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerService } from './services/spinner.service';
 import { SpinnerInterceptor } from './interceptors/spinner-interceptor';
 import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
+import { LoginComponent } from './routes/login/login.component';
+import { RegisterComponent } from './routes/register/register.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboar
     WorldDataBarChartComponent,
     WorldDataDoughnutChartComponent,
     SpinnerComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
