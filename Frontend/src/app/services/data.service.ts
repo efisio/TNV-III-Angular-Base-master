@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CovidData } from '../models/data.model';
-import { ApiDaily } from '../models/apiDaily.model';
+import { ApiDaily, ApiDailyData } from '../models/apiDaily.model';
 import { EnabledCountry } from '../models/enabledCountry.model';
 
 
@@ -61,9 +61,6 @@ export class DataService {
   //salvataggio dati sul DB
   saveCountryData = (countryCode: string, countryData: any) => {
 
-    // console.log('-->', countryCode);
-    // console.log('----->', countryData);
-
     const body = Object.assign([], countryData);
 
     return this.http.post<any>(this.baseURL + "/timelineCountry/" + countryCode, body);
@@ -72,5 +69,10 @@ export class DataService {
   //recupero l'elenco delle country abilitate
   getEnabledCountries(){
     return this.http.get<EnabledCountry[]>(this.baseURL + "/enabledCountry");
+  }
+
+
+  getTimelineDataByCountrycode(countryCode: string){
+    return this.http.get<ApiDailyData[]>(this.baseURL + "/timelineCountry/" + countryCode);
   }
 }

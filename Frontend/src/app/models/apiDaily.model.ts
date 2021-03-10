@@ -5,7 +5,8 @@ export interface ApiDaily {
 export interface ApiDailyData{
     updatedAt: string,
     date: string,
-    deaths: number,
+    deaths?: number,
+    death?: number,
     confirmed: number,
     recovered: number,
     new_confirmed: number,

@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
 
         this.deathData = { 
           title: 'Decessi',
-          data: this.dailyData.confirmed,
+          data: this.dailyData.deaths,
           incremental: this.dailyData.new_deaths,
           class: "deaths",
           icon: 'fa fa-virus'
