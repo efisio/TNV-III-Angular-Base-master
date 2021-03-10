@@ -1,4 +1,5 @@
 const DataEngine = require('../engine/entry');
+const TimelineEngine = require('../engine/timelineEntry');
 const ErrorsEngine  = require('../engine/errors');
 
 module.exports = (app) => {
@@ -14,7 +15,12 @@ module.exports = (app) => {
   app.delete(`${dataPath}/:id`, DataEngine.deleteEntry);
 
   /********** COUNTRY REST APIs **********/
-  app.post(`${timelineCountryPath}/:countryCode`, DataEngine.postTimelineData);
+  //Endpoints per le timeline
+  app.post(`${timelineCountryPath}/:countryCode`, TimelineEngine.postTimelineData);
+
+  //TODO -> creare endpoint get timeline per country ANDREA
+
+  //TODO -> creare enpoint get countries enabled
 
   /********** ERROR HANDLER **********/
   app.use(ErrorsEngine.page404);

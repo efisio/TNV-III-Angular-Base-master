@@ -27,3 +27,4 @@ module.exports = (sequelize, DataType) => {
 
     return TimelineEntry;
 };
+
