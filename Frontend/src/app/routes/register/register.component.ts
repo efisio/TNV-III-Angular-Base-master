@@ -15,21 +15,25 @@ export class RegisterComponent implements OnInit {
 
   userName: string;
   pwd: string;
-  currentUser: User;
-  myimage: string = "/assets/2.jpg"
-
+  newUser: User;
 
   constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  addUsers(registerForm) {
-    //this.currentuser.userName = this.userName;
-    //this.currentuser.pwd = this.pwd
-    this.currentUser = { userName: this.userName, pwd: this.pwd }
-    this.loginService.addUser(this.currentUser);
-    console.log(this.currentUser,this.loginService.users);
+  addUsers(registerForm: NgForm) {
+
+    let username = registerForm.form.value.userName;
+    let password = registerForm.form.value.pwd;
+
+    this.newUser = { userName: username, pwd: password, isAdmin: false}
+
+    //aggiunta user
+    this.loginService.addUser(this.newUser);
+
+    console.log(this.newUser,this.loginService.users);
+
     this.router.navigate(['/login']);
   }
 }

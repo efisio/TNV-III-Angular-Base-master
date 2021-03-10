@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   userName: string;
   pwd: string;
   users: User[];
+
   constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
@@ -26,11 +27,21 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginForm: NgForm) {
-    let checkLogin = this.loginService.checkUser(this.userName, this.pwd);
+
+    let username = loginForm.form.value.userName;
+    let password = loginForm.form.value.pwd;
+
+    let checkLogin = this.loginService.checkUser(username, password);
     if (checkLogin) {
-      this.router.navigate(['/dashboard']);
+
+      if (this.loginService.checkIsAdmin()){
+        this.router.navigate(['/about']);
+      }else{
+        this.router.navigate(['/dashboard']);
+      }
+
     } else {
-      alert("errore");
+      console.log("Login non valida!");
     }
   }
 }

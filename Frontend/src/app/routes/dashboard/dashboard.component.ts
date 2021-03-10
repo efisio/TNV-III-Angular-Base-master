@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './../../services/data.service';
 import { CovidData } from 'src/app/models/data.model';
 import { Router } from '@angular/router';
+import { User } from '../../models/user.model';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +12,13 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
+  currentUser: User;
   covidDataLoader=false;
-  constructor( private dataService: DataService, private router : Router) { }
+  constructor(private dataService: DataService, private loginService: LoginService, private router : Router) { }
 
   ngOnInit(): void {
+    this.currentUser = this.loginService.getCurrentUser();
+    console.log(this.currentUser);
     this.getEntries()
   }
 

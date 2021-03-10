@@ -1,7 +1,4 @@
 <form (ngSubmit)="addUsers(registerForm)" #registerForm="ngForm">
-    <div class="imgcontainer">
-      <img [src]="myimage" alt="Avatar" class="avatar">
-    </div>
   
     <div class="container">
       <label for="uname"><b>Username</b></label>
@@ -10,7 +7,7 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" id="pwd" required ngModel name ="pwd">
   
-      <button type="submit" [disabled]="!registerForm.valid"  >Register</button>
+      <button type="submit" [disabled]="!registerForm.valid">Register</button>
      
     </div>
   
