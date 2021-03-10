@@ -4,7 +4,7 @@ const EnabledCountryEntry = require('../models/index').enabledCountryEntry;
 
 router.get('/', function (req, res, next) {
     EnabledCountryEntry.findAll({})
-        .then(EnabledCountryEntry => res.json(EnabledCountryEntry))
+        .then(fromDbEntry => res.json(fromDbEntry))
         .catch(err => res.json(err))
     ;
 });
