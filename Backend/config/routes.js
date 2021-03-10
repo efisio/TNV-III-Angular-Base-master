@@ -17,7 +17,7 @@ module.exports = (app) => {
   /********** COUNTRY REST APIs **********/
   //Endpoints per le timeline
   app.post(`${timelineCountryPath}/:countryCode`, TimelineEngine.postTimelineData);
-
+  app.get(`${timelineCountryPath}/:countryCode`, TimelineEngine.getTimelineData);
   //TODO -> creare endpoint get timeline per country ANDREA
 
   //TODO -> creare enpoint get countries enabled
