@@ -43,31 +43,6 @@ const postTimelineData = (req, res) => {
         return res.status(500).send(error);
     });
 };
-/*
-const getTimelineData = (req, res) => {
-const timelineCountyCode = req.params.countryCode;
-
-TimelineEntry.findAll({
-    where: {
-        countryCode: timelineCountyCode
-    }
-})
- .then(entry => {
-      if (!entry) {
-        return res.status(404).send({
-          error: true,
-          message: 'The requested data does not exist.',
-          timelineCountyCode
-        })
-      }
-
-      return res.status(200).send(entry);
-    })
-    .catch(err => {
-      return res.status(500).send(err);
-    })
-};
-*/
 
 const getTimelineData = (req, res) => {
     const timelineCountyCode = req.params.countryCode;
