@@ -5,6 +5,7 @@ import { ApiDailyData } from 'src/app/models/apiDaily.model';
 import { DataService } from 'src/app/services/data.service';
 import { ApiCovidService } from '../../services/api-covid.service';
 import { EnabledCountry } from '../../models/enabledCountry.model';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -19,9 +20,18 @@ export class AdminDashboardComponent implements OnInit {
 
   defaultCountry = '';
 
-  constructor(private dataService: DataService, private apiCovidService: ApiCovidService, private router: Router) { }
+  constructor(private dataService: DataService, private apiCovidService: ApiCovidService, 
+    private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+
+
+    // var isLogged = this.loginService.checkIsLogged();
+    // // var isAdmin = this.loginService.checkIsAdmin();
+
+    // console.log('loggato? ', isLogged)
+    // // console.log('admin? ', isAdmin)
+
     this.getEnabledCountries();
 
     
@@ -66,6 +76,10 @@ export class AdminDashboardComponent implements OnInit {
       .subscribe((response: EnabledCountry[]) => {
         this.countriesDb = response;
       })
+  }
+
+  goToHome(){
+    this.router.navigateByUrl('/home');
   }
 
 }

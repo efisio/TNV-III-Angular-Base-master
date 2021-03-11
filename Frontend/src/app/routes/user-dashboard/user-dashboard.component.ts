@@ -30,7 +30,12 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.loginService.checkIsLogged())
+    console.log(this.loginService.getUsers())
+    var isLogged = this.loginService.checkIsLogged();
+    // var isAdmin = this.loginService.checkIsAdmin();
+
+    console.log('loggato? ', isLogged)
+    // console.log('admin? ', isAdmin)
 
     //check login
     // if (!this.loginService.checkIsLogged()) {
@@ -40,6 +45,12 @@ export class UserDashboardComponent implements OnInit {
 
     //TODO da prendere dallo user
     this.countryCode = 'IT';
+
+    // if (this.loginService.getCurrentUser()){
+    //   this.countryCode = this.loginService.getCurrentUser().lang;
+    // }else{
+    //     this.countryCode = 'IT';
+    // }
 
     this.dataService.getTimelineDataByCountrycode(this.countryCode)
       .subscribe((timelineArray: ApiDailyData[]) => {

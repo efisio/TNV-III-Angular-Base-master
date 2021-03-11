@@ -12,21 +12,40 @@ import { NgForm } from '@angular/forms';
 
 
 export class LoginComponent implements OnInit {
-  myimage: string = "/assets/3.jpg"
+  // myimage: string = "/assets/3.jpg"
   userName: string;
   pwd: string;
   users: User[];
+  
+  loginError: boolean = false;
 
   constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
-    console.log(this.loginService.checkIsLogged());
-    if (this.loginService.checkIsLogged()) {
-      this.router.navigateByUrl('/dashboard');
-    }
+
+    // console.log(this.loginService.getUsers())
+    var isLogged = this.loginService.checkIsLogged();
+    // var isAdmin = this.loginService.checkIsAdmin();
+
+    // console.log('loggato? ', isLogged)
+    // console.log('admin? ', isAdmin)
+
+
+    // if (this.loginService.checkIsLogged()) {
+
+    //   //distinzione utenza normale e admin
+    //   if (this.loginService.checkIsAdmin()){
+    //     console.log('admin? ', this.loginService.checkIsAdmin())
+    //     this.router.navigateByUrl('/adminDashboard');
+    //   }else{
+    //     this.router.navigateByUrl('/userDashboard');
+    //   }
+    // }
   }
 
-  login(loginForm: NgForm) {
+  onSubmit(loginForm: NgForm) {
+
+    this.loginError = false;
 
     let username = loginForm.form.value.userName;
     let password = loginForm.form.value.pwd;
@@ -37,10 +56,11 @@ export class LoginComponent implements OnInit {
       if (this.loginService.checkIsAdmin()){
         this.router.navigate(['/adminDashboard']);
       }else{
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       }
 
     } else {
+      this.loginError = true;
       console.log("Login non valida!");
     }
   }

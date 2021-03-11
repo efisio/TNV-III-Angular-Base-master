@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.loginService.checkIsLogged())
 
     //check login
     // if (!this.loginService.checkIsLogged()) {
@@ -74,7 +73,7 @@ export class HomeComponent implements OnInit {
         }
       },
         err => console.error(err),
-        () => console.log("done loading daily data", this.dailyData)
+        // () => console.log("done loading daily data", this.dailyData)
       )
 
     // }

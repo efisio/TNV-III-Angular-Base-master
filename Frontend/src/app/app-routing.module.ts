@@ -19,20 +19,24 @@ import { UserDashboardComponent } from './routes/user-dashboard/user-dashboard.c
 
 
 const routes: Routes = [
-  { path: "", redirectTo : '/home', pathMatch: 'full' },
+  { path: "", redirectTo : '/about', pathMatch: 'full' },
   // { path: "welcome", component : WelcomeComponent },
   { path: "home", component : HomeComponent },
   { path: "about", component : AboutComponent }, //welcome
   { path: "dashboard", component : DashboardComponent },
   { path: "adminDashboard", component : AdminDashboardComponent },
-  // { path: "add", component : AddComponent },
-  // { path: "details/:id", component : DetailsComponent },
-  // { path: "edit/:id", component: EditComponent },
-  // { path: "filterdouble", component: FilterDoubleComponent},
-  // { path: "sortingbydeath", component: SortingbydeathComponent},
-  // { path: "sortBy", component: SortByComponent},
-  // { path: "filterByCountry", component: FilterbycountryComponent},
-  // { path: "apicorona", component:ApiComponent},
+
+
+  { path: "add", component : AddComponent },
+  { path: "details/:id", component : DetailsComponent },
+  { path: "edit/:id", component: EditComponent },
+  { path: "filterdouble", component: FilterDoubleComponent},
+  { path: "sortingbydeath", component: SortingbydeathComponent},
+  { path: "sortBy", component: SortByComponent},
+  { path: "filterByCountry", component: FilterbycountryComponent},
+  { path: "apicorona", component:ApiComponent},
+
+
   { path: "login", component:LoginComponent},
   { path: "register", component:RegisterComponent},
   { path: "userDashboard", component:UserDashboardComponent},
