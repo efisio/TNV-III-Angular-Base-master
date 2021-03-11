@@ -17,6 +17,8 @@ export class AdminDashboardComponent implements OnInit {
   selectedValue: string;
   countriesDb: EnabledCountry[];
 
+  defaultCountry = '';
+
   constructor(private dataService: DataService, private apiCovidService: ApiCovidService, private router: Router) { }
 
   ngOnInit(): void {

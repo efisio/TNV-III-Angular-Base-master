@@ -9,6 +9,7 @@
             <label for="sort" class="col-sm-12 col-form-label">Seleziona un paese da importare</label>
             <div class="col-sm-6">
                 <select class="form-control" id="countryDb" ngModel required name="countryDb" [(ngModel)]="selectedValue">
+                    <option value="" [selected]=true [disabled]="true">Scegli uno stato</option>
                     <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
                 </select>
             </div>
