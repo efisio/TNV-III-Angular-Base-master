@@ -37,7 +37,7 @@ export class AdminDashboardComponent implements OnInit {
     
   }
 
-  filterByCountry(form: NgForm) {
+  submit(form: NgForm) {
     // this.country = form.form.value.country;
     this.country = this.selectedValue;
 

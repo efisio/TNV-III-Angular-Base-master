@@ -4,7 +4,7 @@
     <div>
         <h4>Importazioni dati Covid</h4>
     </div>
-    <form class="pt-5" #form="ngForm">
+    <form class="pt-5" (onsubmit)="submit(form)" #form="ngForm">
         <div class="form-group row">
             <label for="sort" class="col-sm-12 col-form-label">Seleziona un paese da importare</label>
             <div class="col-sm-6">
@@ -14,13 +14,16 @@
                 </select>
             </div>
         </div>
-    
+
+        <button class="btn btn-success mb-3"  [disabled]="!form.valid"  type='submit' >Salva sul Database</button>
+
+        <button class="btn btn-primary mb-3 ml-2" (click)="goToHome()">Vai alla home</button>
     </form>
     
-    <button class="btn btn-primary mb-3" (click)="filterByCountry(form)">Salva sul Database</button>
+    
 
 
-    <button class="btn btn-primary mb-3" (click)="goToHome()">Vai alla home</button>
+    
 
     
 
