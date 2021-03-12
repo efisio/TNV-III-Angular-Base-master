@@ -1,7 +1,8 @@
 .masthead {
     height: 35vh;
     min-height: 50%;
-    background-image: url('/assets/img/coronavirus-img.jpg');
+    /* background-image: url('/assets/img/coronavirus-img.jpg'); */
+    background-image: url('/assets/img/header-img-green.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,4 +54,10 @@
   .menu-divider{
     line-height: 40px;
     color: rgba(0,0,0,.5);
+  }
+
+  .header-logo{
+    width: 250px;
+    height: 110px;
+    margin: 50px 0 0 50px;
   }
