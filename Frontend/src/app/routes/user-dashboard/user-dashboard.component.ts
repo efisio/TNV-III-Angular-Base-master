@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiDaily, ApiDailyData } from 'src/app/models/apiDaily.model';
@@ -38,7 +38,14 @@ export class UserDashboardComponent implements OnInit {
   timelineDataSeries: ApiDailyData[];
 
   ngOnInit(): void {
+  }
 
+  ngOnChanges() {
+    /**********THIS FUNCTION WILL TRIGGER WHEN PARENT COMPONENT UPDATES 'Input variable'**************/
+    this.populateCharts();
+  }
+
+  populateCharts(){
 
     this.dataService.getTimelineDataByCountrycode(this.country.countryCode)
       .subscribe((timelineArray: ApiDailyData[]) => {
@@ -47,7 +54,9 @@ export class UserDashboardComponent implements OnInit {
 
         //nella risposta dal DB ottengo un array ordinato per data
         //indice zero ho la data più recente
-        this.dailyData = Object.assign({},timelineArray[0]);
+        this.dailyData = Object.assign({}, timelineArray[0]);
+
+        // console.log('onchange-> ', this.country.countryCode,this.dailyData);
 
         /* set dei dati per le cards */
         this.confirmedData = {
@@ -82,11 +91,9 @@ export class UserDashboardComponent implements OnInit {
         }
 
       },
-      err => console.error(err),
+        err => console.error(err),
         () => console.log("done loading timeline data")
-    );
-
-
+      );
   }
   
 }

@@ -8,7 +8,7 @@ import { StatisticalCard } from 'src/app/models/statisticalCard.model';
 })
 export class StatisticalCardComponent implements OnInit {
 
-  @Input() statisticalCardDatata: StatisticalCard;
+  @Input() statisticalCardData: StatisticalCard;
 
   title: string;
   data: number;
@@ -19,9 +19,20 @@ export class StatisticalCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.title = this.statisticalCardDatata.title;
-    this.data = this.statisticalCardDatata.data;
-    this.class = this.statisticalCardDatata.class;
-    this.icon = this.statisticalCardDatata.icon;
+    
+  }
+
+  ngOnChanges() {
+    this.populateCards();
+  }
+
+  populateCards(){
+
+    // console.log(this.statisticalCardData);
+
+    this.title = this.statisticalCardData.title;
+    this.data = this.statisticalCardData.data;
+    this.class = this.statisticalCardData.class;
+    this.icon = this.statisticalCardData.icon;
   }
 }

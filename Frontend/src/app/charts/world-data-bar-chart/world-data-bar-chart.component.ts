@@ -83,7 +83,18 @@ export class WorldDataBarChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // console.log('dati in arrivo', this.worldDailyData);
+
+
+  }
+
+  ngOnChanges() {
+    this.dataArrIncrementData = [];
+    this.populateCharts();
+  }
+
+  populateCharts(){
+
+    console.log('dati in arrivo', this.worldDailyData);
 
     //creazione dei dataset
 
@@ -94,11 +105,11 @@ export class WorldDataBarChartComponent implements OnInit {
 
     this.barChartData = [
       {
-        data: this.dataArrIncrementData, 
+        data: this.dataArrIncrementData,
         backgroundColor: 'rgb(99 174 210 / 65%)',
         // borderColor: '#1E88E5', 
         // borderColor: 'red', //nella popup
-        label: 'Incremento giornaliero' 
+        label: 'Incremento giornaliero'
       }
     ];
 

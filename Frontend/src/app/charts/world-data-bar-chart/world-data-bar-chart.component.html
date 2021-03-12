@@ -1,5 +1,5 @@
-<div style="display: block;">
-  <canvas baseChart
+<div style="display: block;" *ngIf="dataArrIncrementData.length > 0" >
+  <canvas baseChart 
     [datasets]="barChartData"
     [labels]="barChartLabels"
     [options]="barChartOptions"

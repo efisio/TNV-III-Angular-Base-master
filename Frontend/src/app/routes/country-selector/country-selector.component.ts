@@ -28,6 +28,8 @@ export class CountrySelectorComponent implements OnInit {
 
     var item = this.countriesDb.filter((c) => c.countryCode === this.selectedCountry);
 
+    // console.log('item', item[0])
+
     this.countryDb = item[0];
   }
 

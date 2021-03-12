@@ -136,7 +136,7 @@ export class CountryLineChartComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log('series: ', this.timelineCountryData);
+    // console.log('series: ', this.timelineCountryData);
 
     
 

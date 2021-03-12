@@ -85,7 +85,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   goToCountries(){
-    this.router.navigateByUrl('/userDashboard');
+    this.router.navigateByUrl('/countryStatististics');
   }
 
 }
