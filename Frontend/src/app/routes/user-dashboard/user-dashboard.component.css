@@ -3,3 +3,21 @@
     /* width: 500px;  */
     height: 400px;
 }
+
+.notes{
+    color: gray;
+    font-size: 0.9rem;
+}
+
+
+.title-h2{
+    color: #36a692;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.title-h4{
+    color: #36a692;
+    font-weight: 900;
+    font-size: 1.5rem;
+}

@@ -37,7 +37,7 @@ export class CountryLineChartComponent implements OnInit {
     elements: { 
       point: 
       { 
-        radius: 0 //visibilità punti nella linea
+        radius: 1 //visibilità punti nella linea
       }
     },
     scales: {
@@ -61,24 +61,42 @@ export class CountryLineChartComponent implements OnInit {
     //   pointHoverBorderColor: 'black'//colore bordo punto hover
     // },
 
+    // backgroundColor: [
+    //   'rgba(3, 226, 170, 1)', //confermati
+    //   'rgba(55, 174, 153, 1)', //guariti
+    //   'rgba(37, 116, 101, 1)'  //decessi
+    // ],
+    // //colore barre su hover
+    // hoverBackgroundColor: [
+    //   'rgba(3, 226, 170, 0.5)', //confermati
+    //   'rgba(55, 174, 153, 0.5)', //guariti
+    //   'rgba(37, 116, 101, 0.5)'  //decessi
+    // ]
+
 
 
 
     { // Confermati
-      backgroundColor: '#37ae99',
-      // borderColor: 'yellow',
+      backgroundColor: 'rgba(3, 226, 170, 1)',
+      borderColor: 'rgba(3, 176, 133, 0.9)',
+      pointHoverRadius: 5,
+      pointBorderWidth: 2,
+      pointHoverBorderWidth: 2,
+
+
       // pointBackgroundColor: 'rgba(148,159,177,1)',
       // pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderWidth: 2,
-      pointBorderWidth: 1,
-      pointHoverRadius: 4,
+      
       // pointHoverBorderColor: '#323d48'
     },
     { // Guariti
-      // backgroundColor: 'rgba(255,0,0,1)',
-      backgroundColor: '#257465',
-      // borderColor: 'blue',
+      backgroundColor: 'rgba(55, 174, 153, 1)',
+      borderColor: 'rgba(43, 136, 119, 0.9)',
+      pointHoverRadius: 5,
+      pointBorderWidth: 2,
+      pointHoverBorderWidth: 2,
+
       // pointBackgroundColor: 'rgba(148,159,177,0.8)',
       // pointBorderColor: '#fff',
       // pointBorderColor: 'red',
@@ -86,9 +104,13 @@ export class CountryLineChartComponent implements OnInit {
       // pointHoverBorderColor: '#fff'
     },
     { // Decessi
-      // backgroundColor: 'rgba(255,0,0,1)',
-      backgroundColor: '#257465',
-      // borderColor: 'red',
+      backgroundColor: 'rgba(37, 116, 101, 1)',
+      borderColor: 'rgba(31, 97, 85, 0.9)',
+      pointHoverRadius: 5,
+      pointBorderWidth: 2,
+      pointHoverBorderWidth: 2,
+
+
       // pointBackgroundColor: 'rgba(148,159,177,0.8)',
       // pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',

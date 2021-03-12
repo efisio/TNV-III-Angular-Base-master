@@ -52,24 +52,17 @@ export class WorldDataDoughnutChartComponent implements OnInit {
   }
 
   colors = [
-    { //colore barre
-      // backgroundColor: [
-      //   'rgba(60, 125, 197, 1)',
-      //   'rgba(100, 208, 113, 1)',
-      //   // 'rgba(255, 145, 145, 1)',
-      //   'rgba(203, 55, 44, 1)'
-      // ],
+    { 
       backgroundColor: [
-        '#03e2aa',
-        '#37ae99',
-        // 'rgba(255, 145, 145, 1)',
-        '#257465'
+        'rgba(3, 226, 170, 1)', //confermati
+        'rgba(55, 174, 153, 1)', //guariti
+        'rgba(37, 116, 101, 1)'  //decessi
       ],
       //colore barre su hover
       hoverBackgroundColor: [
-        'rgba(60, 125, 197, 0.8)',
-        'rgba(100, 208, 113, 0.8)',
-        'rgba(255, 145, 145, 0.8)',
+        'rgba(3, 226, 170, 0.5)', //confermati
+        'rgba(55, 174, 153, 0.5)', //guariti
+        'rgba(37, 116, 101, 0.5)'  //decessi
       ]
     },
   ];

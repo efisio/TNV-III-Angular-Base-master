@@ -29,11 +29,12 @@ const routes: Routes = [
   { path: "about-dati", component : AboutDatiComponent },
   { path: "about-organizzazione", component : AboutOrganizzazioneComponent },
   { path: "about-virus", component : AboutVirusComponent },
-  { path: "adminDashboard", component : AdminDashboardComponent },
-  { path: "login", component: LoginComponent },
+  { path: "adminDashboard", component: AdminDashboardComponent },
+  { path: "userDashboard", component: UserDashboardComponent },
 
+
+  // { path: "login", component: UserDashboardComponent },
   // { path: "register", component: RegisterComponent },
-  // { path: "userDashboard", component: UserDashboardComponent },
 
   // { path: "dashboard", component : DashboardComponent },
   // { path: "add", component : AddComponent },

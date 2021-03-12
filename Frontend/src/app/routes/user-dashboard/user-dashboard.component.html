@@ -1,10 +1,10 @@
 <div class="container" *ngIf="dailyData">
-    <div>
-        <h2>Statistiche del coronavirus tuo paese</h2>
+    <div class="title-h2 text-center mb-4">
+        <span>STATISTICHE CORONAVIRUS NEI PAESI</span>
     </div>
     <div class="p-1 mb-5">
         <!-- card section -->
-        <div class="row mb-3">
+        <div class="row mb-5">
             <div class="col-12 col-md-6 col-sm-6 col-lg-3 p-2">
                 <app-statistical-card [statisticalCardDatata]="confirmedData"></app-statistical-card>
             </div>
@@ -21,31 +21,30 @@
         <!-- graph section -->
         <div class="row mb-3">
             <div class="col-12 col-md-4 col-sm-4 col-lg-4">
-                <div>
-                    <h4>Aumenti Giornalieri percentuali</h4>
+                <div class="title-h4 text-center">
+                    <span>Incremento percentuale</span>
                 </div>
                 <div>
                     <app-world-data-doughnut-chart [worldDailyData]="dailyData"></app-world-data-doughnut-chart>
                 </div>
             </div>
             <div class="col-12 col-md-8 col-sm-8 col-lg-8">
-                <div>
-                    <h4>Aumenti Giornalieri</h4>
+                <div class="title-h4 text-center">
+                    <span>Incremento assoluto</span>
                 </div>
                 <app-world-data-bar-chart [worldDailyData]="dailyData"></app-world-data-bar-chart>
             </div>
         </div>
         <div class="row">
-            <div class="col text-center mt-2 col-12"><span class="">dati aggiornati al {{dailyData.date |
-                    date:'dd/MM/yyyy'}}</span></div>
+            <div class="col text-center mt-2 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
+                    date:'dd/MM/yyyy'}}</span>
+            </div>
         </div>
-        <div class="col col-12">
-            <div>
-                <h4>Andamento mensile stato: {{countryCode}}</h4>
+        <div class="col col-12 mt-4">
+            <div class="title-h4 text-center">
+                <span>Andamento mensile stato: {{countryCode}}</span>
             </div>
             <app-country-line-chart class="linechart-style" [timelineCountryData]="timelineDataSeries"></app-country-line-chart>
         </div>
-        
-        <div>register for more statistical data-mettere bottone o link per la registrazione</div>
     </div>
 </div>
