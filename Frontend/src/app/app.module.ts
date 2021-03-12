@@ -39,6 +39,7 @@ import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboar
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { UserDashboardComponent } from './routes/user-dashboard/user-dashboard.component';
+import { CountryLineChartComponent } from './charts/country-line-chart/country-line-chart.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { UserDashboardComponent } from './routes/user-dashboard/user-dashboard.c
     AdminDashboardComponent,
     LoginComponent,
     RegisterComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    CountryLineChartComponent
   ],
   imports: [
     BrowserModule,

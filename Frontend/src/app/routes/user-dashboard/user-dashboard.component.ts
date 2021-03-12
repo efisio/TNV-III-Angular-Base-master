@@ -28,13 +28,15 @@ export class UserDashboardComponent implements OnInit {
   recoveredData: StatisticalCard;
   newRecoveredData: StatisticalCard;
 
+  timelineDataSeries: ApiDailyData[];
+
   ngOnInit(): void {
 
-    console.log(this.loginService.getUsers())
-    var isLogged = this.loginService.checkIsLogged();
-    // var isAdmin = this.loginService.checkIsAdmin();
+    // console.log(this.loginService.getUsers())
+    // var isLogged = this.loginService.checkIsLogged();
+    // // var isAdmin = this.loginService.checkIsAdmin();
 
-    console.log('loggato? ', isLogged)
+    // console.log('loggato? ', isLogged)
     // console.log('admin? ', isAdmin)
 
     //check login
@@ -55,11 +57,10 @@ export class UserDashboardComponent implements OnInit {
     this.dataService.getTimelineDataByCountrycode(this.countryCode)
       .subscribe((timelineArray: ApiDailyData[]) => {
 
+        this.timelineDataSeries = Object.assign([], timelineArray);
+
         //nella risposta dal DB ottengo un array ordinato per data
         //indice zero ho la data più recente
-        console.log(timelineArray);
-
-
         this.dailyData = Object.assign({},timelineArray[0]);
 
         /* set dei dati per le cards */
@@ -96,7 +97,7 @@ export class UserDashboardComponent implements OnInit {
 
       },
       err => console.error(err),
-      () => console.log("done loading daily data", this.dailyData)
+        () => console.log("done loading timeline data")
     );
 
 

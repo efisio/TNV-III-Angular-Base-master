@@ -34,16 +34,18 @@
                 </div>
                 <app-world-data-bar-chart [worldDailyData]="dailyData"></app-world-data-bar-chart>
             </div>
-        </div><div class="col col-12">
-            <div>
-                <h4>Andamenti statistici paese</h4>
-            </div>
-            GRAFICO LINE
         </div>
         <div class="row">
-            <div class="col text-center mt-2 col-12"><span class="">updated on {{dailyData.date |
+            <div class="col text-center mt-2 col-12"><span class="">dati aggiornati al {{dailyData.date |
                     date:'dd/MM/yyyy'}}</span></div>
         </div>
+        <div class="col col-12">
+            <div>
+                <h4>Andamento mensile stato: {{countryCode}}</h4>
+            </div>
+            <app-country-line-chart class="linechart-style" [timelineCountryData]="timelineDataSeries"></app-country-line-chart>
+        </div>
+        
         <div>register for more statistical data-mettere bottone o link per la registrazione</div>
     </div>
 </div>

@@ -1,10 +1,13 @@
 .recovered-card{
-    background-color: #108f1f;
-    color: #64d071; 
+    /* background-color: #108f1f;
+    color: #64d071;  */
+    background-color: #d8f3ee;
+    color: #36a692; 
 }
 
 .recovered-icon{
-    color: #64d071;
+    /* color: #64d071; */
+    color: #36a692; 
 }
 
 /* .recovered-card{
@@ -17,36 +20,47 @@
 } */
 
 .active-card{
-    color: #ffc078; 
-    background-color: #fd7e14;
+    /* color: #ffc078; 
+    background-color: #fd7e14; */
+    background-color: #d8f3ee;
+    color: #36a692; 
 }
 
 .active-icon{
-    color: #ffc078;
+    /* color: #ffc078; */
+    color: #36a692; 
 }
 
 .confirmed-card{
-    color: #3c7dc5; 
-    background-color: #224C7B;
+    /* color: #3c7dc5; 
+    background-color: #224C7B; */
+    background-color: #d8f3ee;
+    color: #36a692; 
 }
 
 .confirmed-icon{
-    color: #3c7dc5;
+    /* color: #3c7dc5; */
+    color: #36a692;
 }
 
-.deaths-card{
-    color: #ff9191; 
-    background-color: #cb372c;
+ .deaths-card{
+    /*color: #ff9191; 
+    background-color: #cb372c; */
+    background-color: #d8f3ee;
+    color: #36a692; 
 }
 
 .deaths-icon{
-    color: #ff9191;
+    /* color: #ff9191; */
+    color: #36a692;
 }
 
 .data-style{
     font-size: 2.1em;
     font-weight: 900;
-    color: white;
+    /* color: white; */
+    color: #36a692; 
+;
 }
 
 .card-title{
