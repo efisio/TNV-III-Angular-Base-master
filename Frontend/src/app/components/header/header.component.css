@@ -6,6 +6,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 30px;
   }
   
   .tracker-text{
@@ -43,7 +44,7 @@
   
   .logo-img{
     padding-top: 4pt;
-    width: 45%;
+    width: 40%;
   }
   
   #claim-div{
@@ -59,5 +60,5 @@
   .header-logo{
     width: 250px;
     height: 110px;
-    margin: 50px 0 0 50px;
+    margin: 50px 0 0 0;
   }

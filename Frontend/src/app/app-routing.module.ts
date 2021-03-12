@@ -29,23 +29,21 @@ const routes: Routes = [
   { path: "about-dati", component : AboutDatiComponent },
   { path: "about-organizzazione", component : AboutOrganizzazioneComponent },
   { path: "about-virus", component : AboutVirusComponent },
-  { path: "dashboard", component : DashboardComponent },
   { path: "adminDashboard", component : AdminDashboardComponent },
+  { path: "login", component: LoginComponent },
 
+  // { path: "register", component: RegisterComponent },
+  // { path: "userDashboard", component: UserDashboardComponent },
 
-  { path: "add", component : AddComponent },
-  { path: "details/:id", component : DetailsComponent },
-  { path: "edit/:id", component: EditComponent },
-  { path: "filterdouble", component: FilterDoubleComponent},
-  { path: "sortingbydeath", component: SortingbydeathComponent},
-  { path: "sortBy", component: SortByComponent},
-  { path: "filterByCountry", component: FilterbycountryComponent},
-  { path: "apicorona", component:ApiComponent},
-
-
-  { path: "login", component:LoginComponent},
-  { path: "register", component:RegisterComponent},
-  { path: "userDashboard", component:UserDashboardComponent},
+  // { path: "dashboard", component : DashboardComponent },
+  // { path: "add", component : AddComponent },
+  // { path: "details/:id", component : DetailsComponent },
+  // { path: "edit/:id", component: EditComponent },
+  // { path: "filterdouble", component: FilterDoubleComponent},
+  // { path: "sortingbydeath", component: SortingbydeathComponent},
+  // { path: "sortBy", component: SortByComponent},
+  // { path: "filterByCountry", component: FilterbycountryComponent},
+  // { path: "apicorona", component:ApiComponent},
 ];
 
 @NgModule({
