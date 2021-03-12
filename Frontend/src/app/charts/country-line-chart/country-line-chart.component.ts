@@ -78,42 +78,45 @@ export class CountryLineChartComponent implements OnInit {
 
     { // Confermati
       backgroundColor: 'rgba(3, 226, 170, 1)',
+      // hoverBackgroundColor: 'rgba(3, 226, 170, 0.5)',
       borderColor: 'rgba(3, 176, 133, 0.9)',
       pointHoverRadius: 5,
       pointBorderWidth: 2,
       pointHoverBorderWidth: 2,
-
-
+      pointHitRadius: 8,
+      pointHoverBackgroundColor: 'blue',
+      pointHoverBorderColor: '#fff',
       // pointBackgroundColor: 'rgba(148,159,177,1)',
       // pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      
+      // pointHoverBackgroundColor: 'blue',
       // pointHoverBorderColor: '#323d48'
     },
     { // Guariti
       backgroundColor: 'rgba(55, 174, 153, 1)',
+      // hoverBackgroundColor: 'rgba(55, 174, 153, 0.5)',
       borderColor: 'rgba(43, 136, 119, 0.9)',
       pointHoverRadius: 5,
       pointBorderWidth: 2,
       pointHoverBorderWidth: 2,
-
+      pointHitRadius: 8,
+      pointHoverBackgroundColor: 'green',
+      pointHoverBorderColor: '#fff',
       // pointBackgroundColor: 'rgba(148,159,177,0.8)',
       // pointBorderColor: '#fff',
       // pointBorderColor: 'red',
-      pointHoverBackgroundColor: '#fff',
-      // pointHoverBorderColor: '#fff'
     },
     { // Decessi
       backgroundColor: 'rgba(37, 116, 101, 1)',
+      // hoverBackgroundColor: 'rgba(37, 116, 101, 0.5)',
       borderColor: 'rgba(31, 97, 85, 0.9)',
       pointHoverRadius: 5,
       pointBorderWidth: 2,
       pointHoverBorderWidth: 2,
-
-
+      pointHitRadius: 8,
+      pointHoverBackgroundColor: 'red',
+      pointHoverBorderColor: '#fff',
       // pointBackgroundColor: 'rgba(148,159,177,0.8)',
       // pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
       // pointHoverBorderColor: '#fff'
     }
   ];
@@ -149,9 +152,9 @@ export class CountryLineChartComponent implements OnInit {
     });
 
     this.lineChartData= [
-      { data: this.dataConfirmed, label: 'Confermati', fill: '1' },
-      { data: this.dataRecovered, label: 'Guariti', fill: '-1' },
-      { data: this.dataDeath, label: 'Decessi', fill: '-1' },
+      { data: this.dataConfirmed, label: 'Confermati'},
+      { data: this.dataRecovered, label: 'Guariti'},
+      { data: this.dataDeath, label: 'Decessi'},
     ];
 
     this.lineChartLabels = this.labels;
