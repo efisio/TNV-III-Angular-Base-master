@@ -1,4 +1,4 @@
-<div style="display: block;">
+<div style="display: block;" *ngIf="worldDailyData">
   <canvas baseChart
     [data]="doughnutChartData"
     [labels]="doughnutChartLabels"
@@ -7,4 +7,9 @@
     [colors]="colors"
     [chartType]="doughnutChartType">
   </canvas>
+</div>
+<div *ngIf="!worldDailyData" class="m-5">
+    <div class="alert alert-secondary" role="alert">
+      No Data Available!
+    </div>
 </div>
