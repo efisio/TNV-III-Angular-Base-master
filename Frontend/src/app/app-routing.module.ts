@@ -1,3 +1,4 @@
+import { CountrySelectorComponent } from './routes/country-selector/country-selector.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './routes/dashboard/dashboard.component'
@@ -24,13 +25,14 @@ import { AboutOrganizzazioneComponent } from './routes/about-organizzazione/abou
 const routes: Routes = [
   { path: "", redirectTo : '/about', pathMatch: 'full' },
   // { path: "welcome", component : WelcomeComponent },
-  { path: "home", component : HomeComponent },
+  { path: "worldStatistics", component : HomeComponent },
   { path: "about", component : AboutComponent }, //welcome
   { path: "about-dati", component : AboutDatiComponent },
   { path: "about-organizzazione", component : AboutOrganizzazioneComponent },
   { path: "about-virus", component : AboutVirusComponent },
   { path: "adminDashboard", component: AdminDashboardComponent },
-  { path: "userDashboard", component: UserDashboardComponent },
+  // { path: "userDashboard", component: UserDashboardComponent },
+  { path: "countryStatististics", component: CountrySelectorComponent },
 
 
   // { path: "login", component: UserDashboardComponent },

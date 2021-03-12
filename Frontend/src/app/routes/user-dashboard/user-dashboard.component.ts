@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiDaily, ApiDailyData } from 'src/app/models/apiDaily.model';
+import { EnabledCountry } from 'src/app/models/enabledCountry.model';
 import { StatisticalCard } from 'src/app/models/statisticalCard.model';
 import { ApiCovidService } from 'src/app/services/api-covid.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -15,7 +17,12 @@ export class UserDashboardComponent implements OnInit {
   constructor(private dataService: DataService, private loginService: LoginService, private router: Router) { }
 
 
-  countryCode: string;
+  // @Input() countryCode: string;{countryCode: 'IT', countryName: 'Italia'}
+  @Input() country: EnabledCountry;
+
+  countriesDb: EnabledCountry[];
+
+  // selectedValue: string;
 
   timelineData: ApiDaily;
   dailyData: ApiDailyData;
@@ -32,29 +39,8 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // console.log(this.loginService.getUsers())
-    // var isLogged = this.loginService.checkIsLogged();
-    // // var isAdmin = this.loginService.checkIsAdmin();
 
-    // console.log('loggato? ', isLogged)
-    // console.log('admin? ', isAdmin)
-
-    //check login
-    // if (!this.loginService.checkIsLogged()) {
-    //   //redirect a pagina di login
-    //   this.router.navigate(['/login']);
-    // } else {
-
-    //TODO da prendere dallo user
-    this.countryCode = 'IT';
-
-    // if (this.loginService.getCurrentUser()){
-    //   this.countryCode = this.loginService.getCurrentUser().lang;
-    // }else{
-    //     this.countryCode = 'IT';
-    // }
-
-    this.dataService.getTimelineDataByCountrycode(this.countryCode)
+    this.dataService.getTimelineDataByCountrycode(this.country.countryCode)
       .subscribe((timelineArray: ApiDailyData[]) => {
 
         this.timelineDataSeries = Object.assign([], timelineArray);
@@ -101,11 +87,6 @@ export class UserDashboardComponent implements OnInit {
     );
 
 
-
-
-
-    // }//chiusura if login
-
-
   }
+  
 }

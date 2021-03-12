@@ -1,0 +1,34 @@
+<div class="container" *ngIf="countriesDb">
+    <div class="title-h2 text-center mb-4">
+        <span>STATISTICHE CORONAVIRUS NEI PAESI</span>
+    </div>
+    <div class="mb-5">
+        <form class="pt-2" (change)="onSelect(form)" #form="ngForm">
+            <div class="form-group">
+                
+                <div class="row">
+                    <div class="col-3">
+                        <label for="sort" class="label-select col-form-label">Seleziona lo stato:</label>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-control" id="selectedCountry" ngModel required name="selectedCountry"
+                            [(ngModel)]="selectedCountry">
+                            <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary mb-1 ml-2" [routerLink]='["/worldStatistics"]'><b>VAI ALLE STATISTICHE MONDIALI</b></button>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <hr>
+
+    <!-- <app-user-dashboard *ngIf="selectedCountry" [countryCode]='selectedCountry'></app-user-dashboard> -->
+                                        <!--  input  - contenitore                --> 
+    <app-user-dashboard *ngIf="selectedCountry" [country]='countryDb'></app-user-dashboard>
+
+
+</div>

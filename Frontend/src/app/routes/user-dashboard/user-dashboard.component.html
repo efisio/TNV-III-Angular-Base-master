@@ -1,8 +1,23 @@
-<div class="container" *ngIf="dailyData">
+<!-- <div class="container" *ngIf="dailyData">
     <div class="title-h2 text-center mb-4">
         <span>STATISTICHE CORONAVIRUS NEI PAESI</span>
     </div>
-    <div class="p-1 mb-5">
+    <div class=" mb-4">
+        <form class="pt-5" (change)="onSelect(form)" #form="ngForm">
+            <div class="form-group row">
+                <label for="sort" class="col-sm-12 col-form-label">Seleziona lo stato da visualizzare</label>
+                <div class="col-sm-6">
+                    <select class="form-control" id="countryDb" ngModel required name="countryDb" [(ngModel)]="selectedValue"> 
+                            <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
+                    </select>
+                </div>
+            </div>        
+            <button class="btn btn-primary mb-3 ml-2" [routerLink]='["/home"]'>VAI ALLA HOME</button>
+        </form>
+    </div> -->
+
+
+    <div class="p-1 mb-5" *ngIf="dailyData">
         <!-- card section -->
         <div class="row mb-5">
             <div class="col-12 col-md-6 col-sm-6 col-lg-3 p-2">
@@ -42,9 +57,12 @@
         </div>
         <div class="col col-12 mt-4">
             <div class="title-h4 text-center">
-                <span>Andamento mensile stato: {{countryCode}}</span>
+                <span>Andamento mensile stato: {{country.countryName}}</span>
             </div>
             <app-country-line-chart class="linechart-style" [timelineCountryData]="timelineDataSeries"></app-country-line-chart>
         </div>
     </div>
-</div>
+
+
+
+<!-- </div> -->

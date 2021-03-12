@@ -43,6 +43,7 @@ import { CountryLineChartComponent } from './charts/country-line-chart/country-l
 import { AboutVirusComponent } from './routes/about-virus/about-virus.component';
 import { AboutOrganizzazioneComponent } from './routes/about-organizzazione/about-organizzazione.component';
 import { AboutDatiComponent } from './routes/about-dati/about-dati.component';
+import { CountrySelectorComponent } from './routes/country-selector/country-selector.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { AboutDatiComponent } from './routes/about-dati/about-dati.component';
     CountryLineChartComponent,
     AboutVirusComponent,
     AboutOrganizzazioneComponent,
-    AboutDatiComponent
+    AboutDatiComponent,
+    CountrySelectorComponent
   ],
   imports: [
     BrowserModule,
