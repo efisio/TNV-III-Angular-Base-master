@@ -40,6 +40,9 @@ import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { UserDashboardComponent } from './routes/user-dashboard/user-dashboard.component';
 import { CountryLineChartComponent } from './charts/country-line-chart/country-line-chart.component';
+import { AboutVirusComponent } from './routes/about-virus/about-virus.component';
+import { AboutOrganizzazioneComponent } from './routes/about-organizzazione/about-organizzazione.component';
+import { AboutDatiComponent } from './routes/about-dati/about-dati.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +74,10 @@ import { CountryLineChartComponent } from './charts/country-line-chart/country-l
     LoginComponent,
     RegisterComponent,
     UserDashboardComponent,
-    CountryLineChartComponent
+    CountryLineChartComponent,
+    AboutVirusComponent,
+    AboutOrganizzazioneComponent,
+    AboutDatiComponent
   ],
   imports: [
     BrowserModule,

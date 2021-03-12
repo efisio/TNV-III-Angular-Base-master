@@ -4,37 +4,31 @@
         <div class="row text-center">
 
             <div class="col col-lg-4 col-md-4 col-sm-12 col-12 d-none d-md-block d-xl-block">
-                <h4 class="wrap-primary-text text-right">Welcome to</h4>
+                <h4 class="wrap-primary-text text-right">Benvenuti al progetto</h4>
             </div>
             <div class="col col-lg-4 col-md-4 col-sm-12 col-12">
-                <div class="margin-text-app">
-                    <h2 class="font-weight-light covid-text">covid-<span class="_21-text">21</span>
-                    </h2>
-                    <h1 class="tracker-text">&nbsp;&nbsp;&nbsp;Tracker</h1>
+                <div>
+                    <img src="../../../assets/img/covid-21-tracker.jpg" class="logo-img">
                 </div>
             </div>
             <div class="col col-lg-4 col-md-4 col-sm-12 col-12 d-none d-md-block d-xl-block">
-                <h4 class="wrap-primary-text text-left">Project </h4>
+                <h4 class="wrap-primary-text text-left"></h4>
             </div>
         </div>
 
         <div class="row">
             <div class="col margin-top-30">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum euismod aliquet. Morbi
-                    suscipit tellus sed lectus
-                    posuere, in iaculis sem semper. Nullam ut pulvinar felis, sed scelerisque neque. Nunc malesuada
-                    ipsum et odio commodo,
-                    ut lacinia libero feugiat. Curabitur ornare est ex, sed scelerisque purus aliquet at. Etiam vel
-                    iaculis diam, id
-                    pharetra magna. Proin egestas non sem facilisis commodo. Cras et leo at nisl consectetur dignissim
-                    et nec quam.
+                    Covid-21 Tracker è un progetto nato in Sardegna grazie alla collaborazione con The Net Value.
+                    Grazie a Covid-21 Tracker è possibile monitorare l'andamento del virus SARS-CoV-2
+                    a livello mondiale in tempo reale e grazie alla registrazione al sito vedere i dati relativi alla propria nazione.  
                 </p>
             </div>
         </div>
 
         <div class="text-center registration-btn">
-            <button class="btn btn-primary" [routerLink]='["/register"]'>Registrati</button>
+
+            <button class="btn btn-primary" [routerLink]='["/dashboard"]'><b>REGISTRATI</b></button>
         </div>
 
         <div class="row">
@@ -50,11 +44,10 @@
                     </div>
                     <div class="welcome-widget-container">
                         <h5>
-                            Il Virus
+                            <a class="nav-link" [routerLink]='["/about-virus"]'>Il Virus</a>
                         </h5>
                         <div class="widget-subtitle">
-                            Descrizione problema covid bla bla bla bla bla bla
-
+                            Il SARS-CoV-19 e le sue varianti
                         </div>
                     </div>
                 </div>
@@ -71,10 +64,10 @@
                     </div>
                     <div class="welcome-widget-container">
                         <h5>
-                            Organizzazione
+                            <a class="nav-link" [routerLink]='["/about-organizzazione"]'>Organizzazione</a>
                         </h5>
                         <div class="widget-subtitle">
-                            Descrizione chi siamo bla bla bla bla bla bla
+                            Siamo un team giovane a capo di un'organizzazione no-profit
                         </div>
                     </div>
                 </div>
@@ -91,30 +84,10 @@
                     </div>
                     <div class="welcome-widget-container">
                         <h5>
-                            I nostri Dati
+                            <a class="nav-link" [routerLink]='["/about-dati"]'>I nostri Dati</a>
                         </h5>
                         <div class="widget-subtitle">
-                            Descrizione dei nostri dati bla bla bla bla bla bla
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- la mission -->
-            <div class="col col-lg-3 col-md-6 col-12">
-                <div class="welcome-widget text-center">
-                    <div>
-                        <span class="fa-stack fa-3x">
-                            <i class="fa fa-circle fa-stack-2x icon-background"></i>
-                            <i class="fa fa-hands-helping fa-stack-1x icon-color"></i>
-                        </span>
-                    </div>
-                    <div class="welcome-widget-container">
-                        <h5>
-                            Aiutaci
-                        </h5>
-                        <div class="widget-subtitle">
-                            La nostra mission cosa vogliamo fare bla bla bla bla bla bla
+                            Sempre aggiornati e solo da fonti attendibili e riconosciute
                         </div>
                     </div>
                 </div>
