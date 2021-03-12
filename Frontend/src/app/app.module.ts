@@ -38,6 +38,9 @@ import { SpinnerInterceptor } from './interceptors/spinner-interceptor';
 import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
+import { AboutVirusComponent } from './routes/about-virus/about-virus.component';
+import { AboutOrganizzazioneComponent } from './routes/about-organizzazione/about-organizzazione.component';
+import { AboutDatiComponent } from './routes/about-dati/about-dati.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,10 @@ import { RegisterComponent } from './routes/register/register.component';
     SpinnerComponent,
     AdminDashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AboutVirusComponent,
+    AboutOrganizzazioneComponent,
+    AboutDatiComponent
   ],
   imports: [
     BrowserModule,

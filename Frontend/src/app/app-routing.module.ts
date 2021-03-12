@@ -15,6 +15,9 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminDashboardComponent } from './routes/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
+import { AboutVirusComponent } from './routes/about-virus/about-virus.component';
+import { AboutDatiComponent } from './routes/about-dati/about-dati.component';
+import { AboutOrganizzazioneComponent } from './routes/about-organizzazione/about-organizzazione.component';
 
 
 const routes: Routes = [
@@ -22,6 +25,9 @@ const routes: Routes = [
   // { path: "welcome", component : WelcomeComponent },
   { path: "home", component : HomeComponent },
   { path: "about", component : AboutComponent }, //welcome
+  { path: "about-dati", component : AboutDatiComponent },
+  { path: "about-organizzazione", component : AboutOrganizzazioneComponent },
+  { path: "about-virus", component : AboutVirusComponent },
   { path: "dashboard", component : DashboardComponent },
   { path: "adminDashboard", component : AdminDashboardComponent },
   // { path: "add", component : AddComponent },

@@ -14,11 +14,11 @@
 }
 
 .icon-background {
-    color:  #d8f3ee;
+    color:  #c0d3e0;
 }
 
 .icon-color {
-    color:  #212429;
+    color:  #28527E;
 }
 
 .circle-icon {
@@ -64,9 +64,4 @@
 .wrap-primary-text{
     line-height: 100px;
     padding: 0 5px 0 5px;
-}
-
-.logo-img{
-    width: 200px;
-    height: 200px;
 }
