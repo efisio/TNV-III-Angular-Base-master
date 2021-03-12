@@ -136,25 +136,36 @@ export class CountryLineChartComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  ngOnChanges() {
+
+    this.dataConfirmed = [];
+    this.dataRecovered = [];
+    this.dataDeath = [];
+    this.labels = [];
+
+    this.populateCharts();
+  }
+
+  populateCharts(){
     // console.log('series: ', this.timelineCountryData);
 
-    
-
     this.timelineCountryData
-    .reverse()
-    .forEach( (timelineItem) => {
-      
-      this.dataConfirmed.push(timelineItem.confirmed);
-      this.dataRecovered.push(timelineItem.recovered);
-      this.dataDeath.push(timelineItem.death);
-      this.labels.push(timelineItem.date);
+      .reverse()
+      .forEach((timelineItem) => {
 
-    });
+        this.dataConfirmed.push(timelineItem.confirmed);
+        this.dataRecovered.push(timelineItem.recovered);
+        this.dataDeath.push(timelineItem.death);
+        this.labels.push(timelineItem.date);
 
-    this.lineChartData= [
-      { data: this.dataConfirmed, label: 'Confermati'},
-      { data: this.dataRecovered, label: 'Guariti'},
-      { data: this.dataDeath, label: 'Decessi'},
+      });
+
+    this.lineChartData = [
+      { data: this.dataConfirmed, label: 'Confermati' },
+      { data: this.dataRecovered, label: 'Guariti' },
+      { data: this.dataDeath, label: 'Decessi' },
     ];
 
     this.lineChartLabels = this.labels;
