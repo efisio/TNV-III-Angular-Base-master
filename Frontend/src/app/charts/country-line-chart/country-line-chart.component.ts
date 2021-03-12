@@ -151,6 +151,7 @@ export class CountryLineChartComponent implements OnInit {
   populateCharts(){
     // console.log('series: ', this.timelineCountryData);
 
+    //riordiniamo i dati per la visualizzazione nella line chart
     this.timelineCountryData
       .reverse()
       .forEach((timelineItem) => {
