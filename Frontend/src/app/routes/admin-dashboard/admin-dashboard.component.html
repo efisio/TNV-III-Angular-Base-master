@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
     <div class="title-h2 text-center mb-4">
         <span>DASHBOARD ADMIN</span>
     </div>
@@ -12,31 +12,22 @@
                 <label for="sort" class="label-select col-form-label">Seleziona lo stato:</label>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-3 mb-2">
-                <select class="form-control" id="selectedValue" (change)='message = null; error=null' ngModel required name="selectedValue" [(ngModel)]="selectedValue">
+                <select class="form-control" id="selectedValue" (change)='message = null' ngModel required name="selectedValue" [(ngModel)]="selectedValue">
                     <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
                 </select>
             </div>
             <div class="col-sm-12 col-md-12 pl-2 text-left col-lg-4">
-                <div class="" *ngIf="message" >
-                    {{message}}
-                </div>
-                <div class="" *ngIf="error">
+                <div *ngIf="message" class="alert alert-success" role="alert">
                     {{message}}
                 </div>
             </div>
         </div>
-
-
-        <button class="btn btn-success mb-3" [disabled]="!form.valid"  (click)="submit(form)" type='submit' ><b>IMPORTA LA NAZIONE</b></button>
-
-        <button class="btn btn-primary mb-3 ml-2" (click)="goToHome()">VAI ALLE STATISTICHE MONDIALI</button>
+        <button class="btn btn-success mb-3 mt-3" [disabled]="!form.valid"  (click)="submit(form)" type='submit' ><b>IMPORTA LA NAZIONE</b></button>
     </form>
-    
-    
 
-
+    <div class="row">
+        <button class="btn btn-primary mb-3 ml-2 mt-3" (click)="goToHome()"><b>VAI ALLE STATISTICHE MONDIALI</b></button>
+        <button class="btn btn-primary mb-3 ml-2 mt-3" (click)="goToCountries()"><b>VAI ALLE STATISTICHE DEI PAESI</b></button>
+    </div>
     
-
-    
-
 </div>

@@ -18,7 +18,7 @@ export class AdminDashboardComponent implements OnInit {
   selectedValue: string;
   countriesDb: EnabledCountry[];
   message: string = null;
-  error: string = null;
+  errorMessage: string = null;
 
   defaultCountry = '';
 
@@ -56,7 +56,7 @@ export class AdminDashboardComponent implements OnInit {
           this.dataService.saveCountryData(this.country, response.data.timeline)
           .subscribe(response => {
             //risposta al salvataggio
-            console.log(response);
+            // console.log(response);
             this.message = 'Salvati ' + response.updated + ' record!';
 
           })
@@ -64,8 +64,7 @@ export class AdminDashboardComponent implements OnInit {
 
       },
       (err) => {
-        console.error(this.error);
-        this.message = 'Errore salvataggio dati.';
+        console.error(err);
       }
     )
   } 
@@ -76,13 +75,17 @@ export class AdminDashboardComponent implements OnInit {
         this.countriesDb = response;
       },
         (err) => {
-          console.error(err)
+          console.error(err);
         }
       )
   }
 
   goToHome(){
     this.router.navigateByUrl('/worldStatistics');
+  }
+
+  goToCountries(){
+    this.router.navigateByUrl('/userDashboard');
   }
 
 }
