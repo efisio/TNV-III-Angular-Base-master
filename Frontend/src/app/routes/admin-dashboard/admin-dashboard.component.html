@@ -5,6 +5,12 @@
     <div class="title-h4 text-center">
         <span>Tool importazione dati Covid</span>
     </div>
+
+    <div class="row">
+        <div class="col text-center mt-2 col-12">
+            <span class="notes">(N.B. puoi importare solo le countries abilitate nel Database)</span>
+        </div>
+    </div>
     <form class="pt-5" #form="ngForm">
 
         <div class="row">
@@ -22,12 +28,12 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-success mb-3 mt-3" [disabled]="!form.valid"  (click)="submit(form)" type='submit' ><b>IMPORTA LA NAZIONE</b></button>
+        <button class="btn btn-primary mb-3 mt-3" [disabled]="!form.valid"  (click)="submit(form)" type='submit' ><b>IMPORTA LA NAZIONE</b></button>
     </form>
 
     <div class="row">
-        <button class="btn btn-primary mb-3 ml-2 mt-3" (click)="goToHome()"><b>VAI ALLE STATISTICHE MONDIALI</b></button>
-        <button class="btn btn-primary mb-3 ml-2 mt-3" (click)="goToCountries()"><b>VAI ALLE STATISTICHE DEI PAESI</b></button>
+        <button class="btn btn-success mb-3 ml-2 mt-3" (click)="goToHome()"><b>VAI ALLE STATISTICHE MONDIALI</b></button>
+        <button class="btn btn-success mb-3 ml-2 mt-3" (click)="goToCountries()"><b>VAI ALLE STATISTICHE DEI PAESI</b></button>
     </div>
     
 </div>
