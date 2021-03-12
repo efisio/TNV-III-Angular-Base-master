@@ -78,7 +78,14 @@ export class WorldDataDoughnutChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
 
+  ngOnChanges() {
+    // this.dataArrIncrementData = [];
+    this.populateCharts();
+  }
+
+  populateCharts(){
     this.totalCount = this.worldDailyData.new_confirmed +
       this.worldDailyData.new_recovered +
       this.worldDailyData.new_deaths;
@@ -88,8 +95,6 @@ export class WorldDataDoughnutChartComponent implements OnInit {
       this.worldDailyData.new_recovered,
       this.worldDailyData.new_deaths
     ];
-    
-
   }
 
 }
