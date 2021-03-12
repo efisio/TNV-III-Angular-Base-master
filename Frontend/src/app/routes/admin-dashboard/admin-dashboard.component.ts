@@ -17,6 +17,8 @@ export class AdminDashboardComponent implements OnInit {
   country: string;
   selectedValue: string;
   countriesDb: EnabledCountry[];
+  message: string = null;
+  error: string = null;
 
   defaultCountry = '';
 
@@ -38,14 +40,11 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   submit(form: NgForm) {
-    // this.country = form.form.value.country;
-    this.country = this.selectedValue;
 
-    if (this.country) {
-      console.log(this.country);
 
-    }
-    //TODO  gestire se non seleziono qualcosa 
+    console.log(form.form.value.selectedValue)
+    
+    this.country = form.form.value.selectedValue;
 
     this.apiCovidService.getCountryData(this.country)
       .subscribe(response => {
@@ -58,15 +57,15 @@ export class AdminDashboardComponent implements OnInit {
           .subscribe(response => {
             //risposta al salvataggio
             console.log(response);
-
-            // fai qualcosa
+            this.message = 'Salvati ' + response.updated + ' record!';
 
           })
         }
 
       },
       (err) => {
-        console.error(err)
+        console.error(this.error);
+        this.message = 'Errore salvataggio dati.';
       }
     )
   } 
@@ -75,11 +74,15 @@ export class AdminDashboardComponent implements OnInit {
     this.dataService.getEnabledCountries()
       .subscribe((response: EnabledCountry[]) => {
         this.countriesDb = response;
-      })
+      },
+        (err) => {
+          console.error(err)
+        }
+      )
   }
 
   goToHome(){
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/worldStatistics');
   }
 
 }

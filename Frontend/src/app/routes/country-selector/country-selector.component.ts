@@ -25,6 +25,10 @@ export class CountrySelectorComponent implements OnInit {
 
   onSelect(form: NgForm) {
     console.log(this.selectedCountry);
+
+    var item = this.countriesDb.filter((c) => c.countryCode === this.selectedCountry);
+
+    this.countryDb = item[0];
   }
 
   getEnabledCountries() {

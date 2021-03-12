@@ -1,23 +1,35 @@
 <div class="container">
-
-    <h3>Dashboard Admin</h3>
-    <div>
-        <h4>Importazioni dati Covid</h4>
+    <div class="title-h2 text-center mb-4">
+        <span>DASHBOARD ADMIN</span>
     </div>
-    <form class="pt-5" (onsubmit)="submit(form)" #form="ngForm">
-        <div class="form-group row">
-            <label for="sort" class="col-sm-12 col-form-label">Seleziona un paese da importare</label>
-            <div class="col-sm-6">
-                <select class="form-control" id="countryDb" ngModel required name="countryDb" [(ngModel)]="selectedValue">
-                    <option value="" [selected]=true [disabled]="true">Scegli uno stato</option>
+    <div class="title-h4 text-center">
+        <span>Tool importazione dati Covid</span>
+    </div>
+    <form class="pt-5" #form="ngForm">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 text-left">
+                <label for="sort" class="label-select col-form-label">Seleziona lo stato:</label>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 mb-2">
+                <select class="form-control" id="selectedValue" (change)='message = null; error=null' ngModel required name="selectedValue" [(ngModel)]="selectedValue">
                     <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
                 </select>
             </div>
+            <div class="col-sm-12 col-md-12 pl-2 text-left col-lg-4">
+                <div class="" *ngIf="message" >
+                    {{message}}
+                </div>
+                <div class="" *ngIf="error">
+                    {{message}}
+                </div>
+            </div>
         </div>
 
-        <button class="btn btn-success mb-3"  [disabled]="!form.valid"  type='submit' >Salva sul Database</button>
 
-        <button class="btn btn-primary mb-3 ml-2" (click)="goToHome()">Vai alla home</button>
+        <button class="btn btn-success mb-3" [disabled]="!form.valid"  (click)="submit(form)" type='submit' ><b>IMPORTA LA NAZIONE</b></button>
+
+        <button class="btn btn-primary mb-3 ml-2" (click)="goToHome()">VAI ALLE STATISTICHE MONDIALI</button>
     </form>
     
     
