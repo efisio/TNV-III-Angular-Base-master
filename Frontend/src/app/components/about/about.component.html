@@ -21,18 +21,16 @@
             </div>
             <div class="col col-12 text-center margin-top-30 mb-3">
                 <p>
-                    Covid-21 Tracker è un progetto nato in Sardegna grazie alla collaborazione con The Net Value.
-                    Grazie a Covid-21 Tracker è possibile monitorare l'andamento del virus SARS-CoV-2
+                    <b>Covid-21 Tracker</b> è un progetto nato in Sardegna grazie alla collaborazione con The Net Value.
+                    Grazie a <b>Covid-21 Tracker</b> è possibile monitorare l'andamento del virus SARS-CoV-2
                     a livello mondiale in tempo reale e grazie alla registrazione al sito vedere i dati relativi alla propria nazione.  
                 </p>
             </div>
         </div>
 
-        <div class="text-center registration-btn">
-            <button class="btn btn-custom" [routerLink]='["/worldStatistics"]'><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
-        </div>
+        
 
-        <div class="row mb-5">
+        <div class="row mb-5 mt-3">
             <!-- start section block -->
             <!-- virus -->
             <div class="col col-lg-4 col-md-4 col-12">
@@ -44,9 +42,7 @@
                         </span>
                     </div>
                     <div class="welcome-widget-container">
-                        <h5>
-                            <a class="nav-link widget-text" [routerLink]='["/about-virus"]'>Il Virus</a>
-                        </h5>
+                            <span class="title-h4"><a class="nav-link widget-text" [routerLink]='["/about-virus"]'>Il Virus</a></span>
                         <div class="widget-subtitle">
                             Il SARS-CoV-19 e le sue varianti.
                         </div>
@@ -65,9 +61,7 @@
                         </span>
                     </div>
                     <div class="welcome-widget-container">
-                        <h5>
-                            <a class="nav-link widget-text" [routerLink]='["/about-organizzazione"]'>Organizzazione</a>
-                        </h5>
+                            <span class="title-h4"><a class="nav-link widget-text" [routerLink]='["/about-organizzazione"]'>Organizzazione</a></span>
                         <div class="widget-subtitle">
                             Siamo un team giovane a capo di un'organizzazione no-profit.
                         </div>
@@ -85,9 +79,7 @@
                         </span>
                     </div>
                     <div class="welcome-widget-container">
-                        <h5>
-                            <a class="nav-link widget-text" [routerLink]='["/about-dati"]'>I nostri Dati</a>
-                        </h5>
+                            <span class="title-h4"><a class="nav-link widget-text" [routerLink]='["/about-dati"]'>I nostri Dati</a></span>
                         <div class="widget-subtitle">
                             Sempre aggiornati e solo da fonti attendibili e riconosciute.
                         </div>
@@ -95,6 +87,10 @@
                 </div>
             </div>
             <!-- end sections block -->
+        </div>
+
+        <div class="text-center registration-btn mt-4 mb-5">
+            <button class="btn btn-custom" [routerLink]='["/worldStatistics"]'><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
         </div>
 
     </div>
