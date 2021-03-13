@@ -94,7 +94,7 @@ export class WorldDataBarChartComponent implements OnInit {
 
   populateCharts(){
 
-    console.log('dati in arrivo', this.worldDailyData);
+    //console.log('dati in arrivo', this.worldDailyData);
 
     //creazione dei dataset
 

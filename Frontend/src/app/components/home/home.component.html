@@ -11,7 +11,13 @@
     <hr>
     <div class="p-1 mb-5">
         <div class="title-h4 text-center mb-3">
-            <span>Statistiche assolute</span>
+            <span >Statistiche assolute
+                <i class="fas fa-info-circle fa-info-custom" 
+                    [ngbTooltip]="tipAssolute" 
+                    tooltipClass="tooltip-custom-class" 
+                    placement="right">
+                </i>
+            </span> 
         </div>
         <!-- card section -->
         <div class="row mb-5" *ngIf="showStatistics">
@@ -45,7 +51,11 @@
         <div class="row mb-3 mt-5">
             <div class="col-12 col-md-4 col-sm-4 col-lg-4">
                 <div class="title-h4 text-center mb-3">
-                    <span>Incremento giornaliero %</span>
+                    <span>Incremento giornaliero %
+                        <i class="fas fa-info-circle fa-info-custom" [ngbTooltip]="tipGiornalieroPerc" tooltipClass="tooltip-custom-class"
+                            placement="right">
+                        </i>
+                    </span>
                 </div>
                 <div *ngIf="showStatistics">
                     <app-world-data-doughnut-chart [worldDailyData]="dailyData"></app-world-data-doughnut-chart>
@@ -60,7 +70,11 @@
             </div>
             <div class="col-12 col-md-8 col-sm-8 col-lg-8">
                 <div class="title-h4 text-center mb-3">
-                    <span>Incremento giornaliero</span>
+                    <span>Incremento giornaliero
+                        <i class="fas fa-info-circle fa-info-custom" [ngbTooltip]="tipGiornaliero" tooltipClass="tooltip-custom-class"
+                            placement="right">
+                        </i>
+                    </span>
                 </div>
                 <div *ngIf="showStatistics">
                     <app-world-data-bar-chart [worldDailyData]="dailyData"></app-world-data-bar-chart>
@@ -81,3 +95,19 @@
         </div>
     </div>
 </div>
+
+
+<!-- Tooltips -->
+
+<!-- Assoluti -->
+<ng-template #tipAssolute>
+    Casi e decessi<br>dall' inizio pandemia
+</ng-template>
+<!-- Giornalieri % -->
+<ng-template #tipGiornalieroPerc>
+    Incremento percentuale giornaliero<br>rispetto alla giornata precedente
+</ng-template>
+<!-- Giornalieri -->
+<ng-template #tipGiornaliero>
+    Incremento giornaliero<br>rispetto alla giornata precedente
+</ng-template>

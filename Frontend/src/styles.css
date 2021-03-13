@@ -10,6 +10,27 @@ body{
     max-width:100%;
 }
 
+/* .tooltip-custom-class .tooltip-inner{
+    background-color: blueviolet;
+}
+
+.tooltip-custom-class .arrow::before{
+    border-top-color: red;
+} */
+
+.fa-info-custom{
+    font-size: 1rem;
+    vertical-align: 5px;
+}
+
+.tooltip-custom-class .tooltip-inner {
+    background-color: #36a692;
+    color: #d8f3ee;
+}
+.tooltip-custom-class .arrow:before {
+    border-right-color: #36a692 !important;
+}
+
 /* shadows */
 /* box {
     min-height: 100px;

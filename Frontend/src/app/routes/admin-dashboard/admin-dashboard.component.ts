@@ -42,7 +42,7 @@ export class AdminDashboardComponent implements OnInit {
   submit(form: NgForm) {
 
 
-    console.log(form.form.value.selectedValue)
+    //console.log(form.form.value.selectedValue)
     
     this.country = form.form.value.selectedValue;
 

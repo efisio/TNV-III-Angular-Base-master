@@ -35,7 +35,7 @@ export class SpinnerInterceptor implements HttpInterceptor {
                         }
                     },
                     err => {
-                        console.log('error' + err);
+                        console.log('error', err);
                         this.removeRequest(req);
                         observer.error(err);
                     },

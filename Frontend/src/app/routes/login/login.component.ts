@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       this.loginError = true;
-      console.log("Login non valida!");
+      //console.log("Login non valida!");
     }
   }
 }

@@ -57,6 +57,11 @@ export class UserDashboardComponent implements OnInit {
           this.showStatistics = true;
         }
 
+
+
+console.log('DATIIII ',timelineArray)
+
+
         this.timelineDataSeries = Object.assign([], timelineArray);
 
         //nella risposta dal DB ottengo un array ordinato per data
