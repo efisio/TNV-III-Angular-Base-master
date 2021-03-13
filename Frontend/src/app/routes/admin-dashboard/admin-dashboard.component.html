@@ -18,7 +18,11 @@
                 <label for="sort" class="label-select col-form-label">Seleziona lo stato:</label>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-3 mb-2">
-                <select class="form-control" id="selectedValue" (change)='message = null' ngModel required name="selectedValue" [(ngModel)]="selectedValue">
+                <select class="form-control" id="selectedValue" name="selectedValue"
+                    (change)='message = null' 
+                    required  
+                    [(ngModel)]="selectedValue">
+                    <option value='' disabled >Seleziona un paese abilitato</option>
                     <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
                 </select>
             </div>

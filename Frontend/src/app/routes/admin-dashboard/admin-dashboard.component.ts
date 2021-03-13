@@ -15,7 +15,7 @@ import { LoginService } from '../../services/login.service';
 export class AdminDashboardComponent implements OnInit {
 
   country: string;
-  selectedValue: string;
+  selectedValue: string = '';
   countriesDb: EnabledCountry[];
   message: string = null;
   errorMessage: string = null;
