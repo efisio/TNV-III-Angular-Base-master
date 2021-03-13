@@ -30,6 +30,7 @@ export class WorldDataDoughnutChartComponent implements OnInit {
     },
     legend: {
       display: true,
+      usePointStyle: true
     },
     title: {
       display: false,

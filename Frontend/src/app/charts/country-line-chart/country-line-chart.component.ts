@@ -27,6 +27,7 @@ export class CountryLineChartComponent implements OnInit {
     legend: {
       display: true,
       labels: {
+        usePointStyle: true,
       }
     },
     plugins: {
@@ -73,11 +74,8 @@ export class CountryLineChartComponent implements OnInit {
     //   'rgba(37, 116, 101, 0.5)'  //decessi
     // ]
 
-
-
-
     { // Confermati
-      backgroundColor: 'rgba(3, 226, 170, 1)',
+      backgroundColor: 'rgba(3, 201, 151, 0.8)',
       // hoverBackgroundColor: 'rgba(3, 226, 170, 0.5)',
       borderColor: 'rgba(3, 176, 133, 0.9)',
       pointHoverRadius: 5,
@@ -92,7 +90,7 @@ export class CountryLineChartComponent implements OnInit {
       // pointHoverBorderColor: '#323d48'
     },
     { // Guariti
-      backgroundColor: 'rgba(55, 174, 153, 1)',
+      backgroundColor: 'rgba(49, 155, 136, 0.9)',
       // hoverBackgroundColor: 'rgba(55, 174, 153, 0.5)',
       borderColor: 'rgba(43, 136, 119, 0.9)',
       pointHoverRadius: 5,
@@ -106,7 +104,7 @@ export class CountryLineChartComponent implements OnInit {
       // pointBorderColor: 'red',
     },
     { // Decessi
-      backgroundColor: 'rgba(37, 116, 101, 1)',
+      backgroundColor: 'rgba(37, 116, 102, 1)',
       // hoverBackgroundColor: 'rgba(37, 116, 101, 0.5)',
       borderColor: 'rgba(31, 97, 85, 0.9)',
       pointHoverRadius: 5,
@@ -166,7 +164,7 @@ export class CountryLineChartComponent implements OnInit {
     this.lineChartData = [
       { data: this.dataConfirmed, label: 'Confermati' },
       { data: this.dataRecovered, label: 'Guariti' },
-      { data: this.dataDeath, label: 'Decessi' },
+      { data: this.dataDeath, label: 'Decessi'},
     ];
 
     this.lineChartLabels = this.labels;
