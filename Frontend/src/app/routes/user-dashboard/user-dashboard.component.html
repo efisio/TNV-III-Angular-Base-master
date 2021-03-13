@@ -1,28 +1,10 @@
-<!-- <div class="container" *ngIf="dailyData">
-    <div class="title-h2 text-center mb-4">
-        <span>STATISTICHE CORONAVIRUS NEI PAESI</span>
-    </div>
-    <div class=" mb-4">
-        <form class="pt-5" (change)="onSelect(form)" #form="ngForm">
-            <div class="form-group row">
-                <label for="sort" class="col-sm-12 col-form-label">Seleziona lo stato da visualizzare</label>
-                <div class="col-sm-6">
-                    <select class="form-control" id="countryDb" ngModel required name="countryDb" [(ngModel)]="selectedValue"> 
-                            <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
-                    </select>
-                </div>
-            </div>        
-            <button class="btn btn-success mb-3 ml-2" [routerLink]='["/home"]'>VAI ALLA HOME</button>
-        </form>
-    </div> -->
-
 
     <div class="p-1 mb-5" *ngIf="dailyData">
         <div class="title-h4 text-center mb-3">
             <span>Statistiche assolute</span>
         </div>
         <!-- card section -->
-        <div class="row mb-5">
+        <div class="row mb-5" *ngIf="showStatistics">
             <div class="col-12 col-md-6 col-sm-6 col-lg-3 p-2">
                 <app-statistical-card [statisticalCardData]="confirmedData"></app-statistical-card>
             </div>
@@ -36,6 +18,13 @@
                 <app-statistical-card [statisticalCardData]="deathData"></app-statistical-card>
             </div>
         </div>
+        <!-- No data available -->
+        <div *ngIf="!showStatistics" >
+            <div class="alert alert-secondary" role="alert">
+                No Data Available!
+            </div>
+        </div>
+
         <div class="row">
             <div class="col text-center mt-1 mb-3 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
                     date:'dd/MM/yyyy'}}</span>
@@ -48,15 +37,31 @@
                 <div class="title-h4 text-center mb-3">
                     <span>Incremento giornaliero %</span>
                 </div>
-                <div>
+                <div *ngIf="showStatistics">
                     <app-world-data-doughnut-chart [worldDailyData]="dailyData"></app-world-data-doughnut-chart>
+                </div>
+
+                <!-- No data available -->
+                <div *ngIf="!showStatistics">
+                    <div class="alert alert-secondary text-center" role="alert">
+                        No Data Available!
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-8 col-sm-8 col-lg-8">
                 <div class="title-h4 text-center mb-3">
                     <span>Incremento giornaliero</span>
                 </div>
-                <app-world-data-bar-chart [worldDailyData]="dailyData"></app-world-data-bar-chart>
+                <div *ngIf="showStatistics">
+                    <app-world-data-bar-chart [worldDailyData]="dailyData"></app-world-data-bar-chart>
+                </div>
+
+                <!-- No data available -->
+                <div *ngIf="!showStatistics">
+                    <div class="alert alert-secondary text-center" role="alert">
+                        No Data Available!
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -69,7 +74,16 @@
             <div class="title-h4 text-center mb-3">
                 <span>Andamento statistico stato: {{country.countryName}}</span>
             </div>
-            <app-country-line-chart class="linechart-style" [timelineCountryData]="timelineDataSeries"></app-country-line-chart>
+            <div *ngIf="showStatistics">
+                <app-country-line-chart class="linechart-style" [timelineCountryData]="timelineDataSeries"></app-country-line-chart>
+            </div>
+
+            <!-- No data available -->
+            <div *ngIf="!showStatistics">
+                <div class="alert alert-secondary text-center" role="alert">
+                    No Data Available!
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col text-center mt-4 mt-2 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
@@ -77,7 +91,3 @@
             </div>
         </div>
     </div>
-
-
-
-<!-- </div> -->

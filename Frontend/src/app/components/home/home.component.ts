@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   timelineData: ApiDaily;
   dailyData: ApiDailyData;
 
+  showStatistics: boolean = false;
+
   deathData: StatisticalCard;
   newDeathsData: StatisticalCard;
   activeData: StatisticalCard;
@@ -37,6 +39,13 @@ export class HomeComponent implements OnInit {
 
       this.apiService.getDailyData().subscribe((data: ApiDaily) => {
         this.timelineData = data;
+
+        this.showStatistics = false;
+
+        //controllo sulla presenza dei dati
+        if (this.timelineData.data.length > 0) {
+          this.showStatistics = true;
+        }
 
         this.dailyData = this.timelineData.data[0];
 

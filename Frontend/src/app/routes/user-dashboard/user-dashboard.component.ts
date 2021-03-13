@@ -26,6 +26,7 @@ export class UserDashboardComponent implements OnInit {
 
   timelineData: ApiDaily;
   dailyData: ApiDailyData;
+  showStatistics: boolean = false;
 
   deathData: StatisticalCard;
   newDeathsData: StatisticalCard;
@@ -42,6 +43,7 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnChanges() {
     /**********THIS FUNCTION WILL TRIGGER WHEN PARENT COMPONENT UPDATES 'Input variable'**************/
+    this.showStatistics = false;
     this.populateCharts();
   }
 
@@ -49,6 +51,11 @@ export class UserDashboardComponent implements OnInit {
 
     this.dataService.getTimelineDataByCountrycode(this.country.countryCode)
       .subscribe((timelineArray: ApiDailyData[]) => {
+
+        //controllo sulla presenza dei dati
+        if (timelineArray.length > 0) {
+          this.showStatistics = true;
+        }
 
         this.timelineDataSeries = Object.assign([], timelineArray);
 

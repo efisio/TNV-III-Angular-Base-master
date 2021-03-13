@@ -1,5 +1,5 @@
 export interface ApiDaily {
-    data: ApiDailyData
+    data: ApiDailyData[]
 }
 
 export interface ApiDailyData{

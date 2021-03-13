@@ -8,7 +8,8 @@ const getEntry = (req, res) => {
         return res.status(200).send(entry)
       })
       .catch(err => {
-        return res.status(500).send(err)
+        console.log(err)
+        return res.status(500).send({ error: 'Database error!' })
       });
   };
 

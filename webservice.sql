@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Mar 12, 2021 alle 19:59
+-- Creato il: Mar 13, 2021 alle 09:49
 -- Versione del server: 5.6.37
 -- Versione PHP: 7.1.8
 
@@ -291,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `enabledcountry` (
   `id` int(11) NOT NULL,
   `countryCode` varchar(2) NOT NULL,
   `countryName` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dump dei dati per la tabella `enabledcountry`
@@ -342,7 +342,7 @@ ALTER TABLE `enabledcountry`
 --
 ALTER TABLE `timeline`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `date` (`date`);
+  ADD UNIQUE KEY `countryCode` (`countryCode`,`date`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -357,7 +357,7 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT per la tabella `enabledcountry`
 --
 ALTER TABLE `enabledcountry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT per la tabella `timeline`
 --
