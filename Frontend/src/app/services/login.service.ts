@@ -2,6 +2,8 @@ import { User } from '../models/user.model';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,52 +28,72 @@ export class LoginService {
   // users:User[] =[this.admin];
   // currentUser:User;
 
-  constructor( ) { 
+  private baseURL = 'http://localhost:8080';
+
+  constructor(private http: HttpClient) {
   }
   
-  addUser(user: User){
-    this.users.getValue().push(user);
-  }
+  // addUser(user: User){
+  //   this.users.getValue().push(user);
+  // }
 
-  getUsers() {
-    return this.users.getValue();
-  }
+  // getUsers() {
+  //   return this.users.getValue();
+  // }
 
-  checkIsLogged(){
-    return this.isLogged.getValue();
-  }
+  // checkIsLogged(){
+  //   return this.isLogged.getValue();
+  // }
 
-  checkIsAdmin() {
-    if (this.currentUser.getValue()){
-      return this.currentUser.getValue().isAdmin;
+  // checkIsAdmin() {
+  //   if (this.currentUser.getValue()){
+  //     return this.currentUser.getValue().isAdmin;
+  //   }
+  // }
+
+  // getCurrentUser(){
+  //   return this.currentUser.getValue();
+  // }
+
+  // logout() {
+  //   // this.isLogged = true;
+
+  //   this.isLogged.next(false);
+  //   this.currentUser.next(null);
+  // }
+
+  // checkUser( userName:string, pwd:string ){
+
+  //   for(let i=0;i<this.users.getValue().length;i++){
+  //     if (userName === this.users.getValue()[i].userName && pwd === this.users.getValue()[i].pwd){
+
+  //       // this.isLogged=true;
+  //       this.isLogged.next(true)
+
+  //       // this.currentUser = this.users[i];
+
+  //       this.currentUser.next(this.users[i]);
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // }
+
+  //sistema con autenticazione Springboot security
+  login(username: string, password: string){
+
+
+    let base64Pass = "YWRtaW46YWRtaW4=";
+    var header = {
+      headers: new HttpHeaders()
+        .set('Authorization', `Basic ${base64Pass}`)
+        .set('Content-Type', 'application/json')
+        // .set('Access-Control-Allow-Origin', this.baseURL)
+        // .set('Access-Control-Allow-Credentials', 'true')
+        // .set('Access-Control-Allow-Methods', 'GET')
     }
-  }
 
-  getCurrentUser(){
-    return this.currentUser.getValue();
-  }
+    return this.http.get<any>(this.baseURL + '/login' + '/' + username, header);
 
-  logout() {
-    // this.isLogged = true;
-
-    this.isLogged.next(false);
-    this.currentUser.next(null);
-  }
-
-  checkUser( userName:string, pwd:string ){
-
-    for(let i=0;i<this.users.getValue().length;i++){
-      if (userName === this.users.getValue()[i].userName && pwd === this.users.getValue()[i].pwd){
-
-        // this.isLogged=true;
-        this.isLogged.next(true)
-
-        // this.currentUser = this.users[i];
-
-        this.currentUser.next(this.users[i]);
-        return true;
-      }
-    }
-    return false;
   }
 }

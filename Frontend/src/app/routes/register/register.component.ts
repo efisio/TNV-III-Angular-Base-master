@@ -36,11 +36,11 @@ export class RegisterComponent implements OnInit {
     this.newUser = { userName: username, pwd: password, isAdmin: false}
 
     //aggiunta user
-    this.loginService.addUser(this.newUser);
+    // this.loginService.addUser(this.newUser);
 
-    console.log(this.newUser,this.loginService.getUsers());
+    // console.log(this.newUser,this.loginService.getUsers());
 
-    this.router.navigate(['/login']);
+    // this.router.navigate(['/login']);
   }
 }
 

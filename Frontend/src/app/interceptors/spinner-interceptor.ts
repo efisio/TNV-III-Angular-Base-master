@@ -29,6 +29,9 @@ export class SpinnerInterceptor implements HttpInterceptor {
             const subscription = next.handle(req)
                 .subscribe(
                     event => {
+
+                        // console.log('INTERCEPTOR HTTP', event);
+
                         if (event instanceof HttpResponse) {
                             this.removeRequest(req);
                             observer.next(event);

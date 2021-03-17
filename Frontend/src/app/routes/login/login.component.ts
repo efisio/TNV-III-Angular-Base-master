@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     // console.log(this.loginService.getUsers())
-    var isLogged = this.loginService.checkIsLogged();
+    // var isLogged = this.loginService.checkIsLogged();
     // var isAdmin = this.loginService.checkIsAdmin();
 
     // console.log('loggato? ', isLogged)
@@ -50,19 +50,34 @@ export class LoginComponent implements OnInit {
     let username = loginForm.form.value.userName;
     let password = loginForm.form.value.pwd;
 
-    let checkLogin = this.loginService.checkUser(username, password);
-    if (checkLogin) {
+    // let checkLogin = this.loginService.checkUser(username, password);
 
-      if (this.loginService.checkIsAdmin()){
-        this.router.navigate(['/adminDashboard']);
-      }else{
-        this.router.navigate(['/home']);
-      }
+    //chiamata all'endpoint di login
+    this.loginService.login(username, password)
+      .subscribe(res => {
+        console.log('LOGIN', res);
 
-    } else {
-      this.loginError = true;
-      //console.log("Login non valida!");
-    }
+        if (res.status == 200) {
+          //
+        }
+      }),
+      (err) => {
+        console.error('ERRORE',err);
+      };
+
+
+    // if (checkLogin) {
+
+    //   if (this.loginService.checkIsAdmin()){
+    //     this.router.navigate(['/adminDashboard']);
+    //   }else{
+    //     this.router.navigate(['/home']);
+    //   }
+
+    // } else {
+    //   this.loginError = true;
+    //   //console.log("Login non valida!");
+    // }
   }
 }
 

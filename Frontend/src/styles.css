@@ -59,6 +59,26 @@ body{
   
 }
 
+.btn-custom.disabled,
+.btn-custom:disabled {
+  background: rgba(54, 166, 146, 0.5);
+  color: #fff;
+  border-color: rgba(54, 166, 146, 0.5);
+  
+}
+
+.title-h2{
+    color: #36a692;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.title-h4{
+    color: #36a692;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
 /* Shadows */
 .p-shadow-1 {
     box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
