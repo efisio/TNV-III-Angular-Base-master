@@ -20,6 +20,10 @@ export class AdminDashboardComponent implements OnInit {
   message: string = null;
   errorMessage: string = null;
 
+  username: string;
+
+
+
   defaultCountry = '';
 
   constructor(private dataService: DataService, private apiCovidService: ApiCovidService, 
@@ -27,16 +31,12 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-    // var isLogged = this.loginService.checkIsLogged();
-    // // var isAdmin = this.loginService.checkIsAdmin();
-
-    // console.log('loggato? ', isLogged)
-    // // console.log('admin? ', isAdmin)
-
-    this.getEnabledCountries();
-
-    
+    if (localStorage.getItem('currentUser') == 'Admin'){
+      this.username = localStorage.getItem('currentUser');
+      this.getEnabledCountries();
+    }else{
+      this.router.navigateByUrl('/admin');
+    }
   }
 
   submit(form: NgForm) {
@@ -56,9 +56,12 @@ export class AdminDashboardComponent implements OnInit {
           this.dataService.saveCountryData(this.country, response.data.timeline)
           .subscribe(response => {
             //risposta al salvataggio
-            // console.log(response);
-            this.message = 'Salvati ' + response.updated + ' record!';
 
+            if (response.updated > 0){
+              this.message = 'Salvato/i ' + response.updated + ' record!';
+            }else{
+              this.message = 'La base dati è già aggiornata!';
+            }
           })
         }
 

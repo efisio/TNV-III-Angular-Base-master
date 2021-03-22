@@ -1,7 +1,6 @@
 import { User } from '../models/user.model';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
@@ -82,18 +81,20 @@ export class LoginService {
   //sistema con autenticazione Springboot security
   login(username: string, password: string){
 
+    let base64Pass = btoa(username + ':' + password);
 
-    let base64Pass = "YWRtaW46YWRtaW4=";
     var header = {
       headers: new HttpHeaders()
         .set('Authorization', `Basic ${base64Pass}`)
         .set('Content-Type', 'application/json')
-        // .set('Access-Control-Allow-Origin', this.baseURL)
-        // .set('Access-Control-Allow-Credentials', 'true')
-        // .set('Access-Control-Allow-Methods', 'GET')
     }
 
     return this.http.get<any>(this.baseURL + '/login' + '/' + username, header);
 
+  }
+
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
   }
 }

@@ -1,13 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    color: #323d48;
+    /* color: #323d48; */
+    color: #36a692;
+    font-weight: bold;
 }
 
 .chart-wrapper{
     position: relative;
     height: 40vh;
     max-width:100%;
+}
+
+a {
+    color: rgba(54, 166, 146, 1);
+}
+
+a:hover {
+    color: rgba(54, 166, 146, 0.5);
 }
 
 /* .tooltip-custom-class .tooltip-inner{

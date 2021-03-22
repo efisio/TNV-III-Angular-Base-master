@@ -31,7 +31,8 @@ const routes: Routes = [
   { path: "about-organizzazione", component : AboutOrganizzazioneComponent },
   { path: "about-virus", component : AboutVirusComponent },
   // { path: "adminDashboard", component: AdminDashboardComponent },
-  { path: "adminDashboard", component: LoginComponent },
+  { path: "admin", component: LoginComponent },
+  { path: "adminDashboard", component: AdminDashboardComponent },
   // { path: "userDashboard", component: UserDashboardComponent },
   { path: "countryStatististics", component: CountrySelectorComponent },
 

@@ -2,42 +2,69 @@
     <div class="title-h2 text-center mb-4">
         <span>DASHBOARD ADMIN</span>
     </div>
-    <div class="title-h4 text-center">
+
+    <div class="text-center mb-4">
+        <div>
+            Benvenuto {{username}}
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                <button class="btn btn-custom ml-3 mt-3" (click)="goToHome()"><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
+            </div>
+            <div class="col-12 text-center mt-2">
+                <button class="btn btn-custom mb-3 ml-3" (click)="goToCountries()"><b>CONSULTA LE STATISTICHE DEI
+                        PAESI</b></button>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="title-h4 text-center mt-5">
         <span>Tool importazione dati Covid</span>
     </div>
 
-    <div class="row">
+    <div class="col-12">
         <div class="col text-center mt-2 col-12">
             <span class="notes">(N.B. puoi importare solo le countries abilitate nel Database)</span>
         </div>
     </div>
-    <form class="pt-5" #form="ngForm">
+    <div class="col text-center">
+        <form class="pt-5" #form="ngForm">
 
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3 text-left">
-                <label for="sort" class="label-select col-form-label">Seleziona lo stato:</label>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-2">
-                <select class="form-control" id="selectedValue" name="selectedValue"
-                    (change)='message = null' 
-                    required  
-                    [(ngModel)]="selectedValue">
-                    <option value='' disabled >Seleziona un paese abilitato</option>
-                    <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
-                </select>
-            </div>
-            <div class="col-sm-12 col-md-12 pl-2 text-left col-lg-4">
-                <div *ngIf="message" class="alert alert-success" role="alert">
-                    {{message}}
+
+
+
+
+    
+            <div class="row justify-content-center">
+                <div class="row">
+    
+                    <div class="col-12">
+                        <div class="col text-center mb-2">
+                            <label for="sort" class="label-select col-form-label">Paese da importare:</label>
+                            <select class="form-control" id="selectedValue" name="selectedValue"
+                                (change)='message = null' 
+                                required  
+                                [(ngModel)]="selectedValue">
+                                <option class='' value='' disabled >Seleziona un paese abilitato</option>
+                                <option class='' *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
+                            </select>
+                        </div>
+                        <div class="col text-center">
+                            <div *ngIf="message" class="alert alert-success" role="alert">
+                                {{message}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <button class="btn btn-primary mb-3 mt-3" [disabled]="!form.valid"  (click)="submit(form)" type='submit' ><b>IMPORTA LA NAZIONE</b></button>
-    </form>
-
-    <div class="row">
-        <button class="btn btn-custom mb-3 ml-3 mt-3" (click)="goToHome()"><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
-        <button class="btn btn-custom mb-3 ml-3 mt-3" (click)="goToCountries()"><b>CONSULTA LE STATISTICHE DEI PAESI</b></button>
+            <button class="btn btn-custom  mb-3 mt-3" [disabled]="!form.valid"  (click)="submit(form)" type='submit' ><b>IMPORTA LA NAZIONE</b></button>
+        </form>
     </div>
+
+        <hr>
+
+    
     
 </div>

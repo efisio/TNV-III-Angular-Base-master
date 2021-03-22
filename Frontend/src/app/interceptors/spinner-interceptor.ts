@@ -25,7 +25,8 @@ export class SpinnerInterceptor implements HttpInterceptor {
         // console.log("No of requests--->" + this.requests.length);
 
         this.spinnerService.isLoading.next(true);
-        return Observable.create(observer => {
+        
+        return new Observable(observer => {
             const subscription = next.handle(req)
                 .subscribe(
                     event => {
@@ -38,7 +39,9 @@ export class SpinnerInterceptor implements HttpInterceptor {
                         }
                     },
                     err => {
-                        console.log('error', err);
+                        
+                        // console.log('interceptor error', err);
+
                         this.removeRequest(req);
                         observer.error(err);
                     },
