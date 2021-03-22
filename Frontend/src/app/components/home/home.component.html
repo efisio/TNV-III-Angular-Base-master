@@ -48,15 +48,24 @@
         </div>
         <hr>
         <!-- graph section -->
-        <div class="row mb-3 mt-5">
-            <div class="col-12 col-md-4 col-sm-4 col-lg-4">
-                <div class="title-h4 text-center mb-3">
+        <div class="row mb-2 mt-5">
+
+            <!-- Doughnut Chart -->
+            <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                <div class="title-h4 text-center">
                     <span>Incremento giornaliero %
                         <i class="fas fa-info-circle fa-info-custom" [ngbTooltip]="tipGiornalieroPerc" tooltipClass="tooltip-custom-class"
                             placement="right">
                         </i>
                     </span>
                 </div>
+
+
+                <div class="col text-center mt-2 col-12">
+                    <span class="small-notes">(N.B. Filtra i risultati cliccando sulla legenda)</span>
+                </div>
+
+
                 <div *ngIf="showStatistics">
                     <app-world-data-doughnut-chart [worldDailyData]="dailyData"></app-world-data-doughnut-chart>
                 </div>
@@ -68,8 +77,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-8 col-sm-8 col-lg-8">
-                <div class="title-h4 text-center mb-3">
+
+            <!-- Bar Chart -->
+            <div class="col-12 col-sm-12 col-md-7 col-lg-8">
+                <div class="title-h4 text-center">
                     <span>Incremento giornaliero
                         <i class="fas fa-info-circle fa-info-custom" [ngbTooltip]="tipGiornaliero" tooltipClass="tooltip-custom-class"
                             placement="right">

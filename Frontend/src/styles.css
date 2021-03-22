@@ -93,7 +93,7 @@ a:hover {
     font-size: 1.5rem;
 }
 
-.title-h3{
+.title-h5{
     color: #36a692;
     font-weight: 900;
     font-size: 1.3rem;
@@ -104,6 +104,14 @@ a:hover {
     font-size: 0.9rem;
     font-weight: 500;
 }
+
+
+.small-notes{
+    color: gray;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
 
 /* Shadows */
 .p-shadow-1 {
