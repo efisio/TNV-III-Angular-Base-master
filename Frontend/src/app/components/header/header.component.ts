@@ -10,10 +10,20 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   isCollapsed : boolean = false;
+  logged: boolean;
 
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  //controlla ad ogni caricamento se ho il cookie di login nel browser
+  ngDoCheck() {
+    if (localStorage.getItem('currentUser') != null && localStorage.getItem('currentUser') == 'Admin') {
+      this.logged = true;
+    } else {
+      this.logged = false;
+    }
   }
 
   logout(){

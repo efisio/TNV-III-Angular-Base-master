@@ -24,12 +24,12 @@
         </div>
         <!-- No data available -->
         <div *ngIf="!showStatistics" >
-            <div class="alert alert-secondary" role="alert">
-                No Data Available!
+            <div class="alert alert-secondary text-center" role="alert">
+                Dati non disponibili!
             </div>
         </div>
 
-        <div class="row">
+        <div *ngIf="showStatistics" class="row">
             <div class="col text-center mt-1 mb-3 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
                     date:'dd/MM/yyyy'}}</span>
             </div>
@@ -52,7 +52,7 @@
                 <!-- No data available -->
                 <div *ngIf="!showStatistics">
                     <div class="alert alert-secondary text-center" role="alert">
-                        No Data Available!
+                        Dati non disponibili!
                     </div>
                 </div>
             </div>
@@ -71,38 +71,40 @@
                 <!-- No data available -->
                 <div *ngIf="!showStatistics">
                     <div class="alert alert-secondary text-center" role="alert">
-                        No Data Available!
+                        Dati non disponibili!
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div *ngIf="showStatistics" class="row">
             <div class="col text-center mt-2 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
                     date:'dd/MM/yyyy'}}</span>
             </div>
         </div>
         <hr>
-        <div class="col col-12 mt-4">
-            <div class="title-h4 text-center mb-3">
-                <!-- <span>Andamento statistico stato: {{country.countryName}}</span> -->
-                <span>Andamento statistico stato: {{country.countryName}}
-                    <i class="fas fa-info-circle fa-info-custom" [ngbTooltip]="tipStatoTimeline" tooltipClass="tooltip-custom-class"
-                        placement="right">
-                    </i>
-                </span>
-            </div>
-            <div *ngIf="showStatistics">
-                <app-country-line-chart class="linechart-style" [timelineCountryData]="timelineDataSeries"></app-country-line-chart>
-            </div>
-
-            <!-- No data available -->
-            <div *ngIf="!showStatistics">
-                <div class="alert alert-secondary text-center" role="alert">
-                    No Data Available!
+        <div class="row mb-3 mt-5">
+            <div class="col col-12 mt-4">
+                <div class="title-h4 text-center mb-3">
+                    <!-- <span>Andamento statistico stato: {{country.countryName}}</span> -->
+                    <span>Andamento statistico stato: {{country.countryName}}
+                        <i class="fas fa-info-circle fa-info-custom" [ngbTooltip]="tipStatoTimeline" tooltipClass="tooltip-custom-class"
+                            placement="right">
+                        </i>
+                    </span>
+                </div>
+                <div *ngIf="showStatistics">
+                    <app-country-line-chart class="linechart-style" [timelineCountryData]="timelineDataSeries"></app-country-line-chart>
+                </div>
+    
+                <!-- No data available -->
+                <div *ngIf="!showStatistics">
+                    <div class="alert alert-secondary text-center" role="alert">
+                        Dati non disponibili!
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div *ngIf="showStatistics" class="row">
             <div class="col text-center mt-4 mt-2 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
                     date:'dd/MM/yyyy'}}</span>
             </div>

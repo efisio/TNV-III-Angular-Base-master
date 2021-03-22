@@ -13,19 +13,19 @@
         </button>
         <div class="collapse navbar-collapse" [class.collapse]="isCollapsed" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+                <li class="nav-item" routerLinkActive="active active-custom" [routerLinkActiveOptions]="{ exact: false }">
                     <a class="nav-link" [routerLink]='["/worldStatistics"]'>Home</a>
                 </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+                <li class="nav-item" routerLinkActive="active active-custom" [routerLinkActiveOptions]="{ exact: false }">
                     <a class="nav-link" [routerLink]='["/about"]'>About us</a>
                 </li>
                 <li class="nav-item">
                     <span class="menu-divider">-</span>
                 </li>
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+                <li class="nav-item" routerLinkActive="active active-custom" [routerLinkActiveOptions]="{ exact: false }">
                     <a class="nav-link" [routerLink]='["/admin"]'>Admin</a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="logged" class="nav-item">
                     <a class="nav-link" role="button" (click)='logout()'>Logout</a>
                 </li>
                 <!-- <li class="nav-item">

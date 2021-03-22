@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    /* color: #323d48; */
-    color: #36a692;
-    font-weight: bold;
+    color: #323d48;
+    /* color: #36a692; */
+    /* font-weight: bold; */
 }
 
 .chart-wrapper{
@@ -18,6 +18,10 @@ a {
 
 a:hover {
     color: rgba(54, 166, 146, 0.5);
+}
+
+.active-custom>.nav-link{
+    color: rgba(54, 166, 146, 1) !important;
 }
 
 /* .tooltip-custom-class .tooltip-inner{
@@ -87,6 +91,18 @@ a:hover {
     color: #36a692;
     font-weight: 900;
     font-size: 1.5rem;
+}
+
+.title-h3{
+    color: #36a692;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
+.notes{
+    color: gray;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* Shadows */

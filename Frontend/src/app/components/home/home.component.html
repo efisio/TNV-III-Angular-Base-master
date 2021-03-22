@@ -38,10 +38,10 @@
         <!-- No data available -->
         <div *ngIf="!showStatistics">
             <div class="alert alert-secondary text-center" role="alert">
-                No Data Available!
+                Dati non disponibili!
             </div>
         </div>
-        <div class="row">
+        <div *ngIf="showStatistics" class="row">
             <div class="col text-center mb-3 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
                     date:'dd/MM/yyyy'}}</span>
             </div>
@@ -64,7 +64,7 @@
                 <!-- No data available -->
                 <div *ngIf="!showStatistics">
                     <div class="alert alert-secondary text-center" role="alert">
-                        No Data Available!
+                        Dati non disponibili!
                     </div>
                 </div>
             </div>
@@ -82,13 +82,13 @@
                 <!-- No data available -->
                 <div *ngIf="!showStatistics">
                     <div class="alert alert-secondary text-center" role="alert">
-                        No Data Available!
+                        Dati non disponibili!
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class="row">
+        <div *ngIf="showStatistics" class="row">
             <div class="col text-center mt-2 col-12"><span class="notes">dati aggiornati al {{dailyData.date |
                 date:'dd/MM/yyyy'}}</span>
             </div>

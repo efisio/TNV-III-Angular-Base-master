@@ -1,64 +1,68 @@
 .masthead {
-    height: 30vh;
-    min-height: 50%;
-    /* background-image: url('/assets/img/coronavirus-img.jpg'); */
-    background-image: url('/assets/img/header-img-green.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 30px;
-  }
-  
-  .tracker-text{
-    font-style: italic;
-    font-size: 5rem;
-    font-weight: 800;
-  }
-  
-  .covid-text{
-    font-size: 4.4rem;
-    margin-top: 70px;
-    margin-bottom: 0;
-  }
-  
-  ._21-text{
-    font-weight: 600;
-    font-size: 5rem;
-  }
-  
-  .logo-divider{
-    border-bottom: 4px solid rgba(255, 0, 0, 0.89);
-    width: 20rem;
-    margin: 0;
-  }
-  
-  /* .margin-text-app{
-    margin-top: 80px;
-  } */
-  
-  .text-claim{
-    color: #343a40;
-    font-size: 0.8rem;
-    padding: 0px 4px 0px 4px;
-  }
-  
-  .logo-img{
-    padding-top: 4pt;
-    width: 40%;
-  }
-  
-  #claim-div{
-    border-top: 1px solid red;
-    border-bottom: 1px solid red;
-  }
+  height: 30vh;
+  min-height: 50%;
+  /* background-image: url('/assets/img/coronavirus-img.jpg'); */
+  background-image: url('/assets/img/header-img-green.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
 
-  .menu-divider{
-    line-height: 40px;
-    color: rgba(0,0,0,.5);
-  }
+.tracker-text{
+  font-style: italic;
+  font-size: 5rem;
+  font-weight: 800;
+}
 
-  .header-logo{
-    width: 340px;
-    height: 150px;
-    margin: 50px 0 0 0;
-  }
+.covid-text{
+  font-size: 4.4rem;
+  margin-top: 70px;
+  margin-bottom: 0;
+}
+
+._21-text{
+  font-weight: 600;
+  font-size: 5rem;
+}
+
+.logo-divider{
+  border-bottom: 4px solid rgba(255, 0, 0, 0.89);
+  width: 20rem;
+  margin: 0;
+}
+
+/* .margin-text-app{
+  margin-top: 80px;
+} */
+
+.text-claim{
+  color: #343a40;
+  font-size: 0.8rem;
+  padding: 0px 4px 0px 4px;
+}
+
+.logo-img{
+  padding-top: 4pt;
+  width: 40%;
+}
+
+#claim-div{
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.menu-divider{
+  line-height: 40px;
+  color: rgba(0,0,0,.5);
+}
+
+.header-logo{
+  width: 340px;
+  height: 150px;
+  margin: 50px 0 0 0;
+}
+
+.nav-link{
+    font-weight: bold !important;
+}
