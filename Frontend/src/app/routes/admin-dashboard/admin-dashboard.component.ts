@@ -10,7 +10,8 @@ import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  styleUrls: ['./admin-dashboard.component.css'],
+  styles: [`::ng-deep body{background-color: rgb(248, 248, 248, 0.8);}`]
 })
 export class AdminDashboardComponent implements OnInit {
 
