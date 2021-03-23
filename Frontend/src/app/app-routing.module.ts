@@ -30,10 +30,8 @@ const routes: Routes = [
   { path: "about-dati", component : AboutDatiComponent },
   { path: "about-organizzazione", component : AboutOrganizzazioneComponent },
   { path: "about-virus", component : AboutVirusComponent },
-  // { path: "adminDashboard", component: AdminDashboardComponent },
   { path: "admin", component: LoginComponent },
   { path: "adminDashboard", component: AdminDashboardComponent },
-  // { path: "userDashboard", component: UserDashboardComponent },
   { path: "countryStatististics", component: CountrySelectorComponent },
 
 
