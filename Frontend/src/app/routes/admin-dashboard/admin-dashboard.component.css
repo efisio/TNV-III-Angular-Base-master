@@ -22,4 +22,15 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.icon-align{
+    line-height: 82px;
+}
 
+.custom-icon-style{
+    color: #36a692;
+}
+
+.title-container{
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}

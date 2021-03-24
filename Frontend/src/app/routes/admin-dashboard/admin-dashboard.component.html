@@ -4,7 +4,7 @@
     </div>
 
 
-    <div class="text-center mb-4">
+    <div class="text-center mb-5">
         <div>
             Benvenuto, <b>{{username}}</b>
         </div>
@@ -14,60 +14,83 @@
 
     <div class="row">
         <!-- content left -->
-        <div class="col-12 col-md-12 col-lg-6 mb-1">
+        <div class="col-12 col-md-12 col-lg-6 mb-3">
             <div class="admin-card h-100">
-                <div class="title-h4 text-center mt-4">
-                    <span>Vai alle sezioni tematiche:</span>
+                <!-- intestazione sezione -->
+                <div class="title-container pb-3">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span class="title-h4">
+                                <i class="fas fa-lg fa-sitemap custom-icon-style pr-3 mt-4"></i>
+                                Naviga sul sito
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 text-center mt-5">
-                    <button class="btn btn-custom ml-3 mt-3" (click)="goToHome()"><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
-                </div>
-                <div class="col-12 text-center mt-2">
-                    <button class="btn btn-custom mb-3 ml-3" (click)="goToCountries()"><b>CONSULTA LE STATISTICHE DEI
-                            PAESI</b></button>
-                </div>
+                <!-- contenuto sezione -->
+                <div class="col-12 text-center mb-3">
+                    <div class="col-12 text-center mt-5">
+                        <button class="btn btn-custom mt-3" (click)="goToAboutUs()"><b>CONSULTA ABOUT US</b></button>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                        <button class="btn btn-custom" (click)="goToHome()"><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                        <button class="btn btn-custom mb-3" (click)="goToCountries()"><b>CONSULTA LE STATISTICHE DEI
+                                PAESI</b></button>
+                    </div>
+                </div>                
             </div>
         </div>
 
         <!-- content right -->
-        <div class="col-12 col-md-12 col-lg-6 mb-1">
+        <div class="col-12 col-md-12 col-lg-6 mb-3">
             <div class="admin-card h-100">
-                <div class="title-h4 text-center mt-4">
-                    <span>Tool importazione dati Covid:</span>
-                </div>
-                
-                <div class="col-12">
-                    <div class="col text-center mt-2 col-12">
-                        <span class="notes">(N.B. puoi importare solo le countries abilitate nel Database)</span>
+
+                <!-- intestazione sezione -->
+                <div class="title-container pb-3">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span class="title-h4">
+                                <i class="fas fa-lg fa-database custom-icon-style pr-3 mt-4"></i>
+                                Tool importazione dati Covid
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 text-center">
-                    <form class="pt-5" #form="ngForm">
+                <!-- contenuto sezione -->
+                <div class="col-12 text-center mb-3">
+                    <div class="col-12 mt-4">
+                        <div class="notes text-center">(N.B. puoi importare solo i paesi abilitati nel Database)</div>
+                    </div>
+                    <form class="pt-2 pb-3" #form="ngForm">
                 
                         <!-- <div class="row justify-content-center"> -->
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center mt-3">
                             <!-- <div class="row"> -->
                 
                             <div class="col-12">
                                 <div class="col text-center mb-2">
-                                    <label for="sort" class="label-select col-form-label">Paese da importare:</label>
+                                    <label for="sort" class="label-select col-form-label">Nazione da importare:</label>
                                     <select class="form-control" id="selectedValue" name="selectedValue" (change)='message = null'
                                         required [(ngModel)]="selectedValue">
-                                        <option class='' value='' disabled>Seleziona un paese abilitato</option>
+                                        <option class='' value='' disabled>Seleziona una nazione</option>
                                         <option class='' *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}
                                         </option>
                                     </select>
-                                </div>
-                                <div class="col text-center">
-                                    <div *ngIf="message" class="alert alert-success" role="alert">
-                                        {{message}}
+
+                                    <div class="text-center mt-2">
+                                        <div *ngIf="message" class="alert alert-success" role="alert">
+                                            {{message}}
+                                        </div>
                                     </div>
+
+                                    <button class="btn btn-custom w-100 mb-3 mt-3" [disabled]="!form.valid" (click)="submit(form)" type='submit'><b>IMPORTA
+                                            LA
+                                            NAZIONE</b></button>
+
                                 </div>
-                            </div>
-                            <!-- </div> -->
-                            <div class="col-12">
-                                <button class="btn btn-custom w-100 mb-3 mt-3" [disabled]="!form.valid" (click)="submit(form)" type='submit'><b>IMPORTA LA
-                                        NAZIONE</b></button>
+                                
                             </div>
                         </div>
                         

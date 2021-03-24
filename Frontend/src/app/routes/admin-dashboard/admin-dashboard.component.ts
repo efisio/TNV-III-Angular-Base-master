@@ -59,7 +59,7 @@ export class AdminDashboardComponent implements OnInit {
             //risposta al salvataggio
 
             if (response.updated > 0){
-              this.message = 'Salvato/i ' + response.updated + ' record!';
+              this.message = 'Salvati/o ' + response.updated + ' record!';
             }else{
               this.message = 'La base dati è già aggiornata!';
             }
@@ -82,6 +82,10 @@ export class AdminDashboardComponent implements OnInit {
           console.error(err);
         }
       )
+  }
+
+  goToAboutUs() {
+    this.router.navigateByUrl('/about');
   }
 
   goToHome(){

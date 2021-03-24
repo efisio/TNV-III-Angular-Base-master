@@ -118,6 +118,10 @@ a:hover {
     font-weight: 500;
 }
 
+option:hover {
+      background-color: yellow;
+    }
+
 
 /* Shadows */
 .p-shadow-1 {
