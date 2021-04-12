@@ -49,6 +49,9 @@ export class UserDashboardComponent implements OnInit {
 
   populateCharts(){
 
+
+    // console.log('incoming country',this.country);
+
     this.dataService.getTimelineDataByCountrycode(this.country.countryCode)
       .subscribe((timelineArray: ApiDailyData[]) => {
 
@@ -59,7 +62,7 @@ export class UserDashboardComponent implements OnInit {
 
 
 
-console.log('DATIIII ',timelineArray)
+        // console.log('DATIIII ',timelineArray)
 
 
         this.timelineDataSeries = Object.assign([], timelineArray);

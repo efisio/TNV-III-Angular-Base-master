@@ -44,6 +44,7 @@ import { AboutVirusComponent } from './routes/about-virus/about-virus.component'
 import { AboutOrganizzazioneComponent } from './routes/about-organizzazione/about-organizzazione.component';
 import { AboutDatiComponent } from './routes/about-dati/about-dati.component';
 import { CountrySelectorComponent } from './routes/country-selector/country-selector.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { CountrySelectorComponent } from './routes/country-selector/country-sele
     NgbModule,
     HttpClientModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    NgSelectModule
   ],
   providers: [
     DataService, 

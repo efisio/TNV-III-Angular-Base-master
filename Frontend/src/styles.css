@@ -1,3 +1,4 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
 /* You can add global styles to this file, and also import other style files */
 
 body{
@@ -118,10 +119,15 @@ a:hover {
     font-weight: 500;
 }
 
-option:hover {
-      background-color: yellow;
-    }
+.my-select option { 
+    background:#000; 
+    color:#fff
+} 
 
+.my-select option:hover { 
+    background:red; 
+    color:green;
+} 
 
 /* Shadows */
 .p-shadow-1 {

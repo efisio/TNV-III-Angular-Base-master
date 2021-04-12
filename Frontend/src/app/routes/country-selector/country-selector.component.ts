@@ -15,7 +15,8 @@ export class CountrySelectorComponent implements OnInit {
 
   countriesDb: EnabledCountry[];
 
-  selectedCountry: string;
+  // selectedCountry: string;
+  selectedCountry?: EnabledCountry;
 
   constructor(private dataService: DataService, private router: Router) { }
 
@@ -26,7 +27,9 @@ export class CountrySelectorComponent implements OnInit {
   onSelect(form: NgForm) {
     //console.log(this.selectedCountry);
 
-    var item = this.countriesDb.filter((c) => c.countryCode === this.selectedCountry);
+    // var item = this.countriesDb.filter((c) => c.countryCode === this.selectedCountry);
+
+    var item = this.countriesDb.filter((c) => c.countryCode === this.selectedCountry.countryCode);
 
     // console.log('item', item[0])
 
@@ -34,16 +37,27 @@ export class CountrySelectorComponent implements OnInit {
   }
 
   getEnabledCountries() {
-    this.selectDefaultCountry();
+    // this.selectDefaultCountry();
+
+
     this.dataService.getEnabledCountries()
       .subscribe((response: EnabledCountry[]) => {
         this.countriesDb = response;
+
+        this.selectedCountry = this.countriesDb.find((c) => { return c.countryCode === 'IT'});
+        this.countryDb = this.selectedCountry;
       })
   }
 
-  selectDefaultCountry() {
-    this.countryDb = { countryCode: 'IT', countryName: 'Italia' };
-    this.selectedCountry = this.countryDb.countryCode;
+  // selectDefaultCountry() {
+  //   this.countryDb = { countryCode: 'IT', countryName: 'Italia' };
+  //   this.selectedCountry = this.countryDb.countryCode;
+  // }
+
+  changeCountry(event){
+    // console.log('change country', event);
+    this.countryDb = event;
   }
+
 
 }

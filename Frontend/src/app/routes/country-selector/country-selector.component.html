@@ -11,10 +11,25 @@
                         <label for="sort" class="label-select col-form-label">Seleziona lo stato:</label>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-3 mb-2">
-                        <select class="form-control" id="selectedCountry" ngModel required name="selectedCountry"
+
+                        <!-- <select class="form-control" id="selectedCountry" ngModel required name="selectedCountry"
                             [(ngModel)]="selectedCountry">
                             <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}</option>
-                        </select>
+                        </select> -->
+
+
+                        <ng-select 
+                            [items]="countriesDb" 
+                            bindLabel="countryName" 
+                            [ngModelOptions]="{standalone: true}" 
+                            [searchable]="false"
+                            (change)="changeCountry($event)"
+                            [clearable]="false"
+                            [(ngModel)]="selectedCountry">
+                        </ng-select>
+
+
+
                     </div>
                     <div class="col-sm-12 col-md-12 pl-2 text-left col-lg-4">
                         <button class="btn btn-custom mb-1 ml-2" [routerLink]='["/worldStatistics"]'><b>CONSULTA LE STATISTICHE MONDIALI</b></button>

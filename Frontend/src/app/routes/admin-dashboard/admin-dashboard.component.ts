@@ -16,7 +16,8 @@ import { LoginService } from '../../services/login.service';
 export class AdminDashboardComponent implements OnInit {
 
   country: string;
-  selectedValue: string = '';
+  // selectedValue: string = '';
+  selectedValue?: EnabledCountry;
   countriesDb: EnabledCountry[];
   message: string = null;
   errorMessage: string = null;
@@ -44,8 +45,12 @@ export class AdminDashboardComponent implements OnInit {
 
 
     //console.log(form.form.value.selectedValue)
+    // this.country = form.form.value.selectedValue;
+
+    console.log(this.selectedValue);
     
-    this.country = form.form.value.selectedValue;
+    
+    this.country = this.selectedValue.countryCode;
 
     this.apiCovidService.getCountryData(this.country)
       .subscribe(response => {
@@ -95,5 +100,10 @@ export class AdminDashboardComponent implements OnInit {
   goToCountries(){
     this.router.navigateByUrl('/countryStatististics');
   }
+
+  changeCountry(event) {
+    this.message = null;
+  }
+
 
 }

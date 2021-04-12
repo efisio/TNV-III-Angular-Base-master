@@ -10,7 +10,6 @@
         </div>
     </div>
 
-    <!-- <hr> -->
 
     <div class="row">
         <!-- content left -->
@@ -28,16 +27,16 @@
                     </div>
                 </div>
                 <!-- contenuto sezione -->
-                <div class="col-12 text-center mb-3">
-                    <div class="col-12 text-center mt-5">
-                        <button class="btn btn-custom mt-3" (click)="goToAboutUs()"><b>CONSULTA ABOUT US</b></button>
+                <div class="col-12 text-center mt-5 mb-5">
+                    <div class="col-12 text-center mt-1 mb-2">
+                        <button class="btn btn-custom" (click)="goToAboutUs()"><b>ABOUT US</b></button>
                     </div>
-                    <div class="col-12 text-center mt-2">
-                        <button class="btn btn-custom" (click)="goToHome()"><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
-                    </div>
-                    <div class="col-12 text-center mt-2">
-                        <button class="btn btn-custom mb-3" (click)="goToCountries()"><b>CONSULTA LE STATISTICHE DEI
+                    <div class="col-12 text-center mt-1 mb-2">
+                        <button class="btn btn-custom" (click)="goToCountries()"><b>CONSULTA LE STATISTICHE DEI
                                 PAESI</b></button>
+                    </div>
+                    <div class="col-12 text-center mt-1 mb-2">
+                        <button class="btn btn-custom" (click)="goToHome()"><b>CONSULTA LE STATISTICHE MONDIALI</b></button>
                     </div>
                 </div>                
             </div>
@@ -59,7 +58,7 @@
                     </div>
                 </div>
                 <!-- contenuto sezione -->
-                <div class="col-12 text-center mb-3">
+                <div class="col-12 mb-3">
                     <div class="col-12 mt-4">
                         <div class="notes text-center">(N.B. puoi importare solo i paesi abilitati nel Database)</div>
                     </div>
@@ -69,13 +68,13 @@
                         <div class="row justify-content-center mt-3">
                             <!-- <div class="row"> -->
                 
-                            <div class="col-12">
-                                <div class="col text-center mb-2">
+                            <div class="col-10">
+                                <!-- <div class="col text-center mb-2">
                                     <label for="sort" class="label-select col-form-label">Nazione da importare:</label>
-                                    <select class="form-control" id="selectedValue" name="selectedValue" (change)='message = null'
+                                    <select class="form-control selectpicker" id="selectedValue" name="selectedValue" (change)='message = null'
                                         required [(ngModel)]="selectedValue">
-                                        <option class='' value='' disabled>Seleziona una nazione</option>
-                                        <option class='' *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}
+                                        <option value='' disabled>Seleziona una nazione</option>
+                                        <option *ngFor="let c of countriesDb" [ngValue]="c.countryCode">{{c.countryName}}
                                         </option>
                                     </select>
 
@@ -89,7 +88,41 @@
                                             LA
                                             NAZIONE</b></button>
 
+                                </div> -->
+
+
+
+                                <div class="col mb-2">
+                                    <label for="sort" class="label-select col-form-label">Aggiornamento dati nazione:</label>
+
+                                    <ng-select 
+                                        [items]="countriesDb" 
+                                        bindLabel="countryName"
+                                        [ngModelOptions]="{standalone: true}"
+                                        [searchable]="false"
+                                        placeholder="Seleziona una nazione"
+                                        [clearable]="false"
+                                        (change)="changeCountry($event)"
+                                        [(ngModel)]="selectedValue">
+                                    </ng-select>
+                                
+                                    <div class="text-center mt-2">
+                                        <div *ngIf="message" class="alert alert-success" role="alert">
+                                            {{message}}
+                                        </div>
+                                    </div>
+                                
+                                    <button class="btn btn-custom w-100 mb-3 mt-3" [disabled]="!selectedValue" (click)="submit(form)"
+                                        type='submit'>
+                                        <b>IMPORTA  LA NAZIONE</b>
+                                    </button>
+                                
                                 </div>
+
+
+
+
+
                                 
                             </div>
                         </div>
@@ -100,7 +133,6 @@
         </div>
         <hr>
     </div>
-
 
 
 
